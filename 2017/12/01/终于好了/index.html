@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="瞎写," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="各种分享与记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雅米的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github">
+<meta name="keywords" content="瞎写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终于好了">
+<meta property="og:url" content="http://yoursite.com/2017/12/01/终于好了/index.html">
 <meta property="og:site_name" content="雅米的个人博客">
-<meta property="og:description" content="各种分享与记录">
+<meta property="og:description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github.io，看是否能够成功打开小结至此你已经可以简单地利用hexo创建自己的博客然后">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-01T07:54:14.160Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雅米的个人博客">
-<meta name="twitter:description" content="各种分享与记录">
+<meta name="twitter:title" content="终于好了">
+<meta name="twitter:description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github.io，看是否能够成功打开小结至此你已经可以简单地利用hexo创建自己的博客然后">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/01/终于好了/"/>
 
 
 
 
 
-  <title>雅米的个人博客</title>
+  <title>终于好了 | 雅米的个人博客</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,10 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-       
-      
 
   
 
@@ -250,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/01/终于好了/" itemprop="url">终于好了</a></h1>
+          <h1 class="post-title" itemprop="name headline">终于好了</h1>
         
 
         <div class="post-meta">
@@ -302,19 +300,18 @@
       
 
       
-        
-          
-          终于可以开始写博客了？！！
-运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [userna
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/01/终于好了/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>终于可以开始写博客了？！！</p>
+<p>运行以下命令部署博客<br> hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布<br>检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了<br>用浏览器打开网址 [username].github.io，看是否能够成功打开<br>小结<br>至此你已经可以简单地利用hexo创建自己的博客然后部署到github上，hexo的博客都是用markdown写的，每一次在本地写完博客后都需要在本地生成页面并且部署（上传）到github上，如何用hexo写博客请参考官方文档或者百度。</p>
+<p>如果你希望有自己的域名并且如何更好地使用hexo，请继续看以下教程。</p>
+<p>将hexo文件上传到github仓库<br>细心的人会注意到，我们部署到github仓库上的文件跟本地的文件会不同，实际上我们只是把本地的.deploy_git文件里面的内容上传到github，而并没有上传如配置文件等hexo文件，为了方便起见我们可以将我们的hexo文件也上传到github上，否则我们可能换了个电脑就没有这些文件，那样没办法更新博客并且发布了。</p>
+<p>在刚刚的blog文件夹下运行<br> git init //在当前文件夹下初始化git<br> git checkout -b hexo //创建hexo分支并切换到hexo分支<br> git remote add origin <a href="https://github.com/linjinjin123/linjinjin123.github.io.git" target="_blank" rel="noopener">https://github.com/linjinjin123/linjinjin123.github.io.git</a> //记得替换你的地址<br> git add .<br> git commit -m “update hexo”<br> git push origin hexo<br>现在你在[username].github.io的仓库下会看到多了一个hexo分支，保存了我们的hexo文件</p>
+<p>为了避免以后误操作（忘记在本地切换到hexo分支），我们最好将hexo设置为默认分支，在仓库的Setting-&gt;Branchs-&gt;Default branch,选择hexo分支，然后update</p>
+<p>使用自己的域名<br>拥有自己的域名话，就可以直接用自己的域名访问而不是github.io这样的后缀的</p>
+<p>首先你需要购买一个自己的域名，我自己的是在阿里云上购买的，com国际域名60元一年，不过阿里云需要实名认证</p>
+<p>设置域名解析，配置以下三项：</p>
+<p> 主机记录     记录类型           记录值</p>
+<p>这是什么</p>
+
       
     </div>
     
@@ -329,142 +326,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-       
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/my-first/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yummy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wechat_image.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="雅米的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/01/my-first/" itemprop="url">my first</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T12:42:25+08:00">
-                2017-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/瞎写/" rel="tag"># 瞎写</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/01/my-first/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/01/my-first/" rel="next" title="my first">
+                <i class="fa fa-chevron-left"></i> my first
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -474,11 +365,11 @@
   </article>
 
 
-      
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -486,6 +377,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -704,6 +599,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
