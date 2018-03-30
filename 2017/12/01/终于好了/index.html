@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github">
+<meta name="description" content="终于可以开始写博客了？！！">
 <meta name="keywords" content="瞎写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终于好了">
 <meta property="og:url" content="http://yoursite.com/2017/12/01/终于好了/index.html">
 <meta property="og:site_name" content="雅米的个人博客">
-<meta property="og:description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github.io，看是否能够成功打开小结至此你已经可以简单地利用hexo创建自己的博客然后">
+<meta property="og:description" content="终于可以开始写博客了？！！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-01T07:54:14.160Z">
+<meta property="og:updated_time" content="2017-12-01T09:29:59.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终于好了">
-<meta name="twitter:description" content="终于可以开始写博客了？！！ 运行以下命令部署博客 hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了用浏览器打开网址 [username].github.io，看是否能够成功打开小结至此你已经可以简单地利用hexo创建自己的博客然后">
+<meta name="twitter:description" content="终于可以开始写博客了？！！">
 
 
 
@@ -191,12 +191,42 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -280,6 +310,17 @@
 
           
           
+             <span id="/2017/12/01/终于好了/" class="leancloud_visitors" data-flag-title="终于好了">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -301,16 +342,6 @@
 
       
         <p>终于可以开始写博客了？！！</p>
-<p>运行以下命令部署博客<br> hexo deploy //你也可以把第3第4条命令合在一起，hexo g -d，意思就是生成完后直接发布<br>检查结果，此时你的生成的博客网页文件已经被上传到了github的[username.github.io]仓库下了<br>用浏览器打开网址 [username].github.io，看是否能够成功打开<br>小结<br>至此你已经可以简单地利用hexo创建自己的博客然后部署到github上，hexo的博客都是用markdown写的，每一次在本地写完博客后都需要在本地生成页面并且部署（上传）到github上，如何用hexo写博客请参考官方文档或者百度。</p>
-<p>如果你希望有自己的域名并且如何更好地使用hexo，请继续看以下教程。</p>
-<p>将hexo文件上传到github仓库<br>细心的人会注意到，我们部署到github仓库上的文件跟本地的文件会不同，实际上我们只是把本地的.deploy_git文件里面的内容上传到github，而并没有上传如配置文件等hexo文件，为了方便起见我们可以将我们的hexo文件也上传到github上，否则我们可能换了个电脑就没有这些文件，那样没办法更新博客并且发布了。</p>
-<p>在刚刚的blog文件夹下运行<br> git init //在当前文件夹下初始化git<br> git checkout -b hexo //创建hexo分支并切换到hexo分支<br> git remote add origin <a href="https://github.com/linjinjin123/linjinjin123.github.io.git" target="_blank" rel="noopener">https://github.com/linjinjin123/linjinjin123.github.io.git</a> //记得替换你的地址<br> git add .<br> git commit -m “update hexo”<br> git push origin hexo<br>现在你在[username].github.io的仓库下会看到多了一个hexo分支，保存了我们的hexo文件</p>
-<p>为了避免以后误操作（忘记在本地切换到hexo分支），我们最好将hexo设置为默认分支，在仓库的Setting-&gt;Branchs-&gt;Default branch,选择hexo分支，然后update</p>
-<p>使用自己的域名<br>拥有自己的域名话，就可以直接用自己的域名访问而不是github.io这样的后缀的</p>
-<p>首先你需要购买一个自己的域名，我自己的是在阿里云上购买的，com国际域名60元一年，不过阿里云需要实名认证</p>
-<p>设置域名解析，配置以下三项：</p>
-<p> 主机记录     记录类型           记录值</p>
-<p>这是什么</p>
 
       
     </div>
@@ -320,6 +351,35 @@
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持分享，随意鼓励。就是觉得这个功能好玩~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yummy 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Yummy 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -351,6 +411,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/12/06/Untitled/" rel="prev" title="Untitled">
+                Untitled <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -377,6 +441,11 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
 
   
 
@@ -421,22 +490,31 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -473,7 +551,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -626,6 +704,27 @@
 
 
   
+    
+
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2150935"></script>
+      <!-- UY END -->
+    
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
 
 
 
@@ -637,20 +736,114 @@
 
 
 
-
-
-
-
-
-
-
   
 
-
-
-
-
   
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("Oq8oHS8pFGajm4zzjJeyyc1U-gzGzoHsz", "RYUO6OAGby9VNIwycgnstBRB");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
