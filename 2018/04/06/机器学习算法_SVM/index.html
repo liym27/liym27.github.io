@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="瞎写," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="终于可以开始写博客了？！！">
-<meta name="keywords" content="瞎写">
+<meta name="description" content="title: 机器学习——SVMdate:tags: visible: ##SVM    SVM解决什么问题、模型细节数学推导、优点缺点、适用场景、与其它模型的比较  ###1.概要：二分类，它的基本模型是在特征空间中寻找间隔最大化的分离超平面的线性分类器。    核心技术：核函数、松弛变量、C惩罚项。 核函数作用：为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="终于好了">
-<meta property="og:url" content="http://yoursite.com/2017/12/01/终于好了/index.html">
+<meta property="og:title" content="雅米的个人博客">
+<meta property="og:url" content="http://yoursite.com/2018/04/06/机器学习算法_SVM/index.html">
 <meta property="og:site_name" content="雅米的个人博客">
-<meta property="og:description" content="终于可以开始写博客了？！！">
+<meta property="og:description" content="title: 机器学习——SVMdate:tags: visible: ##SVM    SVM解决什么问题、模型细节数学推导、优点缺点、适用场景、与其它模型的比较  ###1.概要：二分类，它的基本模型是在特征空间中寻找间隔最大化的分离超平面的线性分类器。    核心技术：核函数、松弛变量、C惩罚项。 核函数作用：为了低维线性不可分映射到高维线性可分，简化计算； 松弛变量：用来表示每个样本分类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-01T09:29:59.618Z">
+<meta property="og:updated_time" content="2018-04-06T07:44:23.126Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="终于好了">
-<meta name="twitter:description" content="终于可以开始写博客了？！！">
+<meta name="twitter:title" content="雅米的个人博客">
+<meta name="twitter:description" content="title: 机器学习——SVMdate:tags: visible: ##SVM    SVM解决什么问题、模型细节数学推导、优点缺点、适用场景、与其它模型的比较  ###1.概要：二分类，它的基本模型是在特征空间中寻找间隔最大化的分离超平面的线性分类器。    核心技术：核函数、松弛变量、C惩罚项。 核函数作用：为了低维线性不可分映射到高维线性可分，简化计算； 松弛变量：用来表示每个样本分类">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/01/终于好了/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/06/机器学习算法_SVM/"/>
 
 
 
 
 
-  <title>终于好了 | 雅米的个人博客</title>
+  <title> | 雅米的个人博客</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/01/终于好了/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/机器学习算法_SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yummy">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">终于好了</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T15:50:00+08:00">
-                2017-12-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T15:44:23+08:00">
+                2018-04-06
               </time>
             
 
@@ -310,7 +309,7 @@
 
           
           
-             <span id="/2017/12/01/终于好了/" class="leancloud_visitors" data-flag-title="终于好了">
+             <span id="/2018/04/06/机器学习算法_SVM/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,7 +340,114 @@
       
 
       
-        <p>终于可以开始写博客了？！！</p>
+        <hr>
+<p>title: 机器学习——SVM<br>date:<br>tags:</p>
+<h2 id="visible"><a href="#visible" class="headerlink" title="visible: "></a>visible: </h2><p>##SVM  </p>
+<blockquote>
+<p>SVM解决什么问题、模型细节数学推导、优点缺点、适用场景、与其它模型的比较</p>
+</blockquote>
+<p>###1.概要：<br><strong>二分类</strong>，它的基本模型是在特征空间中寻找<strong>间隔最大化</strong>的分离超平面的<strong>线性</strong>分类器。  </p>
+<ul>
+<li><strong>核心技术</strong>：核函数、松弛变量、C惩罚项。</li>
+<li><strong>核函数作用</strong>：为了低维线性不可分映射到高维线性可分，简化计算；</li>
+<li><strong>松弛变量</strong>：用来表示每个样本分类错误的程度；</li>
+<li><strong>C惩罚项</strong>：对分类错误的惩罚程度，C值越大，表明越不希望看到离群点（不是错分点，离群点离超平面的距离小于间隔）；</li>
+</ul>
+<p>###2.模型细节</p>
+<p>####2.1目的<br>找到线性超平面：wTx + b = 0</p>
+<blockquote>
+<p><strong>w :</strong>决定超平面方向,为超平面的法向量（可自行证明，比如在二维空间中，分割面（线）的斜率与w垂直，后文将证）；<br><strong>b:</strong>决定超平面与原点的距离。  </p>
+</blockquote>
+<p>这个超平面满足4个条件：</p>
+<ul>
+<li>(1) 将数据分类正确（w确定方向）;</li>
+<li>(2) 决策面应该位于中轴线上，所以r不能自由优化（r确定超平面的位置）；</li>
+<li>(3) x是支持向量 ；</li>
+<li>(4) 支持向量到超平面的间隔最大.</li>
+</ul>
+<p>同时满足前3个约束条件，可以得到式子：</p>
+<p>当式子中的不等号变为等号时，是支持向量。<br>，两个异类支持向量到超平面的距离之和就是<br>为满足条件4，我们要找到</p>
+<p>综上，满足条件1-4的是我们就能得到“最大间隔”的超平面，即<br>等价于 </p>
+<p>####2.2 优化问题<br>这一节纯粹是对式子（）的数学求解，即有约束最优化问题。我们会解无约束最优化问题，那么，将有约束问题转化成无约束问题就可以了。使用拉格朗日乘子法可达到目的。（后边推导该过程）<br>构造拉格朗日函数：<br>对偶问题：<br>// 未完待续……</p>
+<p>####2.3 核函数——从线性推广到非线性的技巧</p>
+<blockquote>
+<p>前面，我们能求解训练样本线性可分情况下的最大间隔超平面，但是现实中的问题不一定线性可分，我们将样本从原始空间映射到一个更高维的特征空间，使得样本在这个特征空间线性可分。</p>
+</blockquote>
+<p>表示x映射后的特征向量，那么对偶问题就变为：</p>
+<p>上式涉及到计算，该内积计算比较困难（因为样本映射到特征空间后维数很高，甚至可能无穷维），为了避开该问题，设计核函数使得在特征空间的内积能够通过核函数计算。<br>重写为<br>求解后可得到<br>模型最优解可以通过训练样本的可函数展开，这一展式成为“支持向量展式”。求解超平面问题转变为求核函数。如果知道的具体形式就能写出核函数了，但是现实中我们通常不知道。那么有没有合适的核函数直接用呢？（高维空间内积能通过核函数计算）。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>表达式</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线性核函数</td>
+</tr>
+<tr>
+<td>多项式核函数</td>
+<td></td>
+<td>d &gt;= 1, d是多项式次数</td>
+</tr>
+<tr>
+<td>高斯核</td>
+<td></td>
+<td>d&gt;0，是高斯核函数的带宽</td>
+</tr>
+<tr>
+<td>拉普拉斯核函数</td>
+<td></td>
+<td>d&gt;0</td>
+</tr>
+<tr>
+<td>sigmoid核函数</td>
+<td></td>
+<td>tanh为双曲正切函数，</td>
+</tr>
+<tr>
+<td>还能通过函数组合得到新的核函数。可查看西瓜书，略。</td>
+</tr>
+</tbody>
+</table>
+<p>$$ a^{2} $$</p>
+<p>关于几种核函数的比较转载自<a href="https://blog.csdn.net/batuwuhanpei/article/details/52354822" target="_blank" rel="noopener">这里</a></p>
+<ul>
+<li><p>线性核：</p>
+<blockquote>
+<p>主要用于线性可分的情况，我们可以看到特征空间到输入空间的维度是一样的，其参数少速度快，对于线性可分数据，其分类效果很理想，因此我们通常首先尝试用线性核函数来做分类，看看效果如何，如果不行再换别的。  </p>
+</blockquote>
+</li>
+<li><p>多项式核函数：</p>
+<blockquote>
+<p>可以实现将低维的输入空间映射到高纬的特征空间，但是多项式核函数的参数多，当多项式的阶数比较高的时候，核矩阵的元素值将趋于无穷大或者无穷小，计算复杂度会大到无法计算。</p>
+</blockquote>
+</li>
+<li><p>高斯核函数：</p>
+<blockquote>
+<p>是一种局部性强的核函数，其可以将一个样本映射到一个更高维的空间内，该核函数是应用最广的一个，无论大样本还是小样本都有比较好的性能，而且其相对于多项式核函数参数要少，因此大多数情况下在不知道用什么核函数的时候，优先使用高斯核函数。</p>
+</blockquote>
+</li>
+<li><p>sigmoid核函数</p>
+<blockquote>
+<p>支持向量机实现的就是一种多层神经网络。</p>
+</blockquote>
+</li>
+</ul>
+<p>因此，在选用核函数的时候，如果我们对我们的数据有一定的先验知识，就利用先验来选择符合数据分布的核函数；如果不知道的话，通常使用交叉验证的方法，来试用不同的核函数，误差最小的即为效果最好的核函数，或者也可以将多个核函数结合起来，形成混合核函数。<br>在吴恩达的课上，也曾经给出过一系列的选择核函数的方法：  </p>
+<ul>
+<li>如果特征的数量大到和样本数量差不多，则选用LR或者线性核的SVM；  </li>
+<li>如果特征的数量小，样本的数量正常，则选用SVM+高斯核函数；</li>
+<li>如果特征的数量小，而样本的数量很大，则需要手工添加一些特征从而变成第一种情况。</li>
+</ul>
+<h4 id="2-4-软间隔与正则化——解决线性不可分与过拟合问题。"><a href="#2-4-软间隔与正则化——解决线性不可分与过拟合问题。" class="headerlink" title="2.4 软间隔与正则化——解决线性不可分与过拟合问题。"></a>2.4 软间隔与正则化——解决线性不可分与过拟合问题。</h4><p>前边，我们假定训练样本在样本空间或特征空间中是线性可分的，即存在一个超平面能将不同类的样本完全分开。然而，现实中很难线性可分，或者即使可分也可能造成过拟合。<br>如何缓解该问题：软间隔，即允许支持向量机在一些样本上出错；前边要求所有样本都划分正确，称为硬间隔。<br>问题转化为：在最大化间隔的同时，错分样本尽可能少。优化目标改为：</p>
+<p> C无穷大时等价于所有样本都得满足约束（分类正确且在距离超平面的距离大于间隔），C取有限值时，允许部分样本不满足约束（离群点）。</p>
+<p>// 后边的内容编辑了大量公式显示不出来 哭</p>
+<p>替代损失函数</p>
+<p>松弛变量</p>
+<p>推导过程1：</p>
 
       
     </div>
@@ -386,12 +492,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/瞎写/" rel="tag"># 瞎写</a>
-          
-        </div>
-      
 
       
       
@@ -401,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/01/my-first/" rel="next" title="my first">
-                <i class="fa fa-chevron-left"></i> my first
+              <a href="/2018/03/30/test0330/" rel="next" title="test0330">
+                <i class="fa fa-chevron-left"></i> test0330
               </a>
             
           </div>
@@ -410,10 +510,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/06/kaggle课程学习/" rel="prev" title="kaggle">
-                kaggle <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -537,6 +642,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#visible"><span class="nav-number">1.</span> <span class="nav-text">visible: </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-软间隔与正则化——解决线性不可分与过拟合问题。"><span class="nav-number">1.0.1.</span> <span class="nav-text">2.4 软间隔与正则化——解决线性不可分与过拟合问题。</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
