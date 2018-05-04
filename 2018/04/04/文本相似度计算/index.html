@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query$q_i$：$Q$解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示">
+<meta name="description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文本相似度 之BM25">
-<meta property="og:url" content="http://yoursite.com/2017/12/05/文本相似度计算/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/04/文本相似度计算/index.html">
 <meta property="og:site_name" content="雅米的个人博客">
-<meta property="og:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query$q_i$：$Q$解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$W_i$:">
+<meta property="og:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$R(q_i,d)$：表示语素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-04T10:27:07.699Z">
+<meta property="og:updated_time" content="2018-05-04T10:50:14.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本相似度 之BM25">
-<meta name="twitter:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query$q_i$：$Q$解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$W_i$:">
+<meta name="twitter:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$R(q_i,d)$：表示语素">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/05/文本相似度计算/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/04/文本相似度计算/"/>
 
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/文本相似度计算/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/文本相似度计算/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yummy">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T21:02:00+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T21:02:00+08:00">
+                2018-04-04
               </time>
             
 
@@ -309,7 +309,7 @@
 
           
           
-             <span id="/2017/12/05/文本相似度计算/" class="leancloud_visitors" data-flag-title="文本相似度 之BM25">
+             <span id="/2018/04/04/文本相似度计算/" class="leancloud_visitors" data-flag-title="文本相似度 之BM25">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,7 +342,7 @@
       
         <h2 id="BM25"><a href="#BM25" class="headerlink" title="BM25"></a>BM25</h2><p>作用：评价搜索词与文档之间相关性。<br>使用场景：检索。<br>流程：计算query与每篇文档 D之间的相关性分数。  </p>
 <p>$$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$ </p>
-<p>$Q$：Query<br>$q_i$：$Q$解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；<br>$d$：表示一个被搜索文档；<br>$W_i$:</p>
+<p>$Q$：Query，可以是用户输入的搜索关键字；<br>$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；<br>$d$：表示一个被搜索文档；<br>$R(q_i,d)$：表示语素 $q_i$ 与 文档 $d$ 的相关性得分；<br>$W_i$：表示语素 $q_i$ 与的权重。常用 <code>IDF</code> 值作为权重。<br>$$IDF(q_i) = log \frac{N-n(q_i)+0.5}{n(q_i)+0.5}$$</p>
 
       
     </div>
@@ -396,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/05/LSTM/" rel="next" title="LSTM 模型原理、细节及应用总结">
-                <i class="fa fa-chevron-left"></i> LSTM 模型原理、细节及应用总结
+              <a href="/2018/03/30/机器翻译简单笔记/" rel="next" title="机器翻译简单笔记">
+                <i class="fa fa-chevron-left"></i> 机器翻译简单笔记
               </a>
             
           </div>
@@ -406,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/05/kaggle课程学习/" rel="prev" title="kaggle">
-                kaggle <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/机器学习算法_SVM/" rel="prev" title="机器学习——SVM">
+                机器学习——SVM <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
