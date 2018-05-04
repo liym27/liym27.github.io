@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://i.imgur.com/ZNzH3rf.png">
 <meta property="og:image" content="https://i.imgur.com/OgU36cx.png">
 <meta property="og:image" content="https://i.imgur.com/OIoOkMy.png">
-<meta property="og:updated_time" content="2018-05-03T02:18:46.591Z">
+<meta property="og:updated_time" content="2018-05-04T10:29:05.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LSTM 模型原理、细节及应用总结">
 <meta name="twitter:description" content="注：非原创，仅在学习中按自身理解思路整理了多篇内容。 LSTM概况参考这里。 LSTM要解决的问题&amp;emsp; RNN在处理长期依赖时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来梯度消失（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是门限RNN,LSTM是门限RNN中最著名的一种。 LSTM是如何解决该问题的&amp;emsp; LSTM通过增加">
@@ -916,6 +916,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
