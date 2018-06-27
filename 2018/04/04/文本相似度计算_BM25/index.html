@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="各种分享与记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="雅米的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：一切需要计算文本相似度的地方，如文本检索、自动问答、文档分类聚类、文档查重、摘要等等。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文本相似度 之BM25">
+<meta property="og:url" content="http://yoursite.com/2018/04/04/文本相似度计算_BM25/index.html">
 <meta property="og:site_name" content="雅米的个人博客">
-<meta property="og:description" content="各种分享与记录">
+<meta property="og:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：一切需要计算文本相似度的地方，如文本检索、自动问答、文档分类聚类、文档查重、摘要等等。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-13T09:39:51.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="雅米的个人博客">
-<meta name="twitter:description" content="各种分享与记录">
+<meta name="twitter:title" content="文本相似度 之BM25">
+<meta name="twitter:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：一切需要计算文本相似度的地方，如文本检索、自动问答、文档分类聚类、文档查重、摘要等等。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/04/文本相似度计算_BM25/"/>
 
 
 
 
 
-  <title>归档 | 雅米的个人博客</title>
+  <title>文本相似度 之BM25 | 雅米的个人博客</title>
   
 
 
@@ -143,7 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,370 +248,273 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/文本相似度计算_BM25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yummy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wechat_image.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雅米的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">文本相似度 之BM25</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T21:02:00+08:00">
+                2018-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
+             <span id="/2018/04/04/文本相似度计算_BM25/" class="leancloud_visitors" data-flag-title="文本相似度 之BM25">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/seq2seq/" itemprop="url">
-              
-                <span itemprop="name">未命名</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T21:08:13+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/文本摘要调研/" itemprop="url">
-              
-                <span itemprop="name">文本摘要调研</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T21:02:00+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/04/公司名检索/" itemprop="url">
-              
-                <span itemprop="name">公司名检索</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-04T21:02:00+08:00"
-              content="2018-05-04" >
-          05-04
-        </time>
-      </div>
-
-    </header>
-  </article>
+      
+        <h2 id="BM25"><a href="#BM25" class="headerlink" title="BM25"></a>BM25</h2><p>作用：评价搜索词与文档之间相关性。<br>使用场景：一切需要计算文本相似度的地方，如文本检索、自动问答、文档分类聚类、文档查重、摘要等等。<br>流程：计算query与每篇文档 D之间的相关性分数。  </p>
+<p>$$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$ </p>
+<p>$Q$：Query，可以是用户输入的搜索关键字；<br>$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；<br>$d$：表示一个被搜索文档；<br>$R(q_i,d)$：表示语素 $q_i$ 与 文档 $d$ 的相关性得分；<br>$W_i$：表示语素 $q_i$ 与的权重。常用 <code>IDF</code> 值作为权重。<br>$$IDF(q_i) = log \frac{N-n(q_i)+0.5}{n(q_i)+0.5}$$</p>
+<p>$N$：索引中的全部文档数；<br>$n(q_i)$：包含了$q_i$的文档数。  </p>
+<p>$$ R(q_i,d) = \frac{f_i·(k_1+1)}{f_i+K}·\frac{qf_i·(k_2+1)}{qf_i+k_2} $$<br>$$ K = k_1·(1-b+b·\frac{dl}{avg(dl)}) $$</p>
+<p>$k_1$,$k_2$,$b$ ：调节因子，根据经验通常设置为 $k_1 = 2$,$b = 0.75$。作用：<br>$f_i$：表示 $q_i$ 在 $D$ 中出现的频率；<br>$qf_i$：表示 $q_i$ 在 $Query$ 中出现的频率；<br>$dl$：表示文档 $D$ 的长度；<br>$avg(dl)$：文档集中所有文档的平均长度。<br>通常，$q_i$ 在 $Query$ 中只出现一次，$qf_i=1$，公式可以化简为<br>$$ R(q_i,d) = \frac{f_i·(k_1+1)}{f_i+K} $$   </p>
+<p>$b$：调整文档长度对相关性影响的大小，$b$ 越大，文档长度影响越大。文档相对长度越长，$K$值越大，相关性得分越少。这很好理解，文档越长包含 $q$ 的可能性就越大，相关性就要越弱。<br>综上，BM25算法的相关性得分公式总结为：<br>$$SCORE(Q,D) = \sum_{i}^n IDF(q_i)·\frac{f_i·(k_1+1)}{f_i+k_1·(1-b+b·\frac{dl}{avg(dl)})}$$    </p>
+<h2 id="python-源码"><a href="#python-源码" class="headerlink" title="python 源码"></a>python 源码</h2><p>python在gensim库中的BM25源码</p>
+<pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the GNU LGPL v2.1 - http://www.gnu.org/licenses/lgpl.html
+    import math
+from six import iteritems
+from six.moves import xrange
 
 
+# BM25 parameters.
+PARAM_K1 = 1.5
+PARAM_B = 0.75
+EPSILON = 0.25
+
+
+class BM25(object):
+
+    def __init__(self, corpus):
+        self.corpus_size = len(corpus)
+        self.avgdl = sum(map(lambda x: float(len(x)), corpus)) / self.corpus_size
+        self.corpus = corpus
+        self.f = []
+        self.df = {}
+        self.idf = {}
+        self.initialize()
+
+    def initialize(self):
+        for document in self.corpus:
+            frequencies = {}
+            for word in document:
+                if word not in frequencies:
+                    frequencies[word] = 0
+                frequencies[word] += 1
+            self.f.append(frequencies)
+
+            for word, freq in iteritems(frequencies):
+                if word not in self.df:
+                    self.df[word] = 0
+                self.df[word] += 1
+
+        for word, freq in iteritems(self.df):
+            self.idf[word] = math.log(self.corpus_size - freq + 0.5) - math.log(freq + 0.5)
+
+    def get_score(self, document, index, average_idf):
+        score = 0
+        for word in document:
+            if word not in self.f[index]:
+                continue
+            idf = self.idf[word] if self.idf[word] &gt;= 0 else EPSILON * average_idf
+            score += (idf * self.f[index][word] * (PARAM_K1 + 1)
+                      / (self.f[index][word] + PARAM_K1 * (1 - PARAM_B + PARAM_B * self.corpus_size / self.avgdl)))
+        return score
+
+    def get_scores(self, document, average_idf):
+        scores = []
+        for index in xrange(self.corpus_size):
+            score = self.get_score(document, index, average_idf)
+            scores.append(score)
+        return scores
+
+
+def get_bm25_weights(corpus):
+    bm25 = BM25(corpus)
+    average_idf = sum(map(lambda k: float(bm25.idf[k]), bm25.idf.keys())) / len(bm25.idf.keys())
+
+    weights = []
+    for doc in corpus:
+        scores = bm25.get_scores(doc, average_idf)
+        weights.append(scores)
+
+    return weights
+</code></pre><h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><pre><code>from gensim.summarization import bm25
+
+bm25Model = bm25.BM25(train_docments) # 训练模型
+average_idf = sum(map(lambda k: float(bm25Model.idf[k]), bm25Model.idf.keys())) / len(bm25Model.idf.keys())
+
+# 查询
+query = &quot;南方航空&quot;
+scores = bm25Model.get_scores(query,average_idf)
+idx = scores.index(max(scores))
+</code></pre><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>&emsp;BM25算法是基于词袋模型的一种向量空间模型(VSM)，词袋模型不考虑词语在文档中的出现顺序，将文档表示成一系列词语的组合。<br>&emsp;缺点：1 基于文本中的特征项进行相似度计算，当特征较多的时候，产生的高维稀疏矩阵导致计算效率不高；2 VSM算法的假设是文本中抽取的特征项没有关联，不符合文本语义表达。<br>&emsp;优点：我自己做实验的时候，在计算短文本相似度时，BM25相对于LSA/LDA来说，效果挺不错的。 </p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/06/Hexo常用命令/" itemprop="url">
-              
-                <span itemprop="name">hexo常用命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-06T16:39:00+08:00"
-              content="2018-04-06" >
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/06/机器学习算法_SVM/" itemprop="url">
-              
-                <span itemprop="name">机器学习——SVM</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-06T15:57:00+08:00"
-              content="2018-04-06" >
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/04/文本相似度计算概述/" itemprop="url">
-              
-                <span itemprop="name">文本相似度 概述</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-04T21:02:00+08:00"
-              content="2018-04-04" >
-          04-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/04/文本相似度计算_BM25/" itemprop="url">
-              
-                <span itemprop="name">文本相似度 之BM25</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-04T21:02:00+08:00"
-              content="2018-04-04" >
-          04-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/04/文本相似度计算_LSA/" itemprop="url">
-              
-                <span itemprop="name">文本相似度 之LSA</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-04T21:02:00+08:00"
-              content="2018-04-04" >
-          04-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/30/机器翻译简单笔记/" itemprop="url">
-              
-                <span itemprop="name">机器翻译简单笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-30T16:18:54+08:00"
-              content="2018-03-30" >
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持分享，随意鼓励。就是觉得这个功能好玩~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Yummy 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Yummy 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/04/文本相似度计算_LSA/" rel="next" title="文本相似度 之LSA">
+                <i class="fa fa-chevron-left"></i> 文本相似度 之LSA
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/04/文本相似度计算概述/" rel="prev" title="文本相似度 概述">
+                文本相似度 概述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -618,6 +522,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -638,8 +551,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -705,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BM25"><span class="nav-number">1.</span> <span class="nav-text">BM25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-源码"><span class="nav-number">2.</span> <span class="nav-text">python 源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用示例"><span class="nav-number">3.</span> <span class="nav-text">使用示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -845,6 +783,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -870,6 +812,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2150935"></script>
+      <!-- UY END -->
     
   
 

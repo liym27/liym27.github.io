@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="雅米的个人博客">
 <meta property="og:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$R(q_i,d)$：表示语素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-04T10:50:14.633Z">
+<meta property="og:updated_time" content="2018-05-13T08:19:34.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本相似度 之BM25">
 <meta name="twitter:description" content="BM25作用：评价搜索词与文档之间相关性。使用场景：检索。流程：计算query与每篇文档 D之间的相关性分数。   $$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$  $Q$：Query，可以是用户输入的搜索关键字；$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；$d$：表示一个被搜索文档；$R(q_i,d)$：表示语素">
@@ -343,7 +343,91 @@
         <h2 id="BM25"><a href="#BM25" class="headerlink" title="BM25"></a>BM25</h2><p>作用：评价搜索词与文档之间相关性。<br>使用场景：检索。<br>流程：计算query与每篇文档 D之间的相关性分数。  </p>
 <p>$$ Score(Q,d) = \sum_{i}^n W_i·R(q_i,d) $$ </p>
 <p>$Q$：Query，可以是用户输入的搜索关键字；<br>$q_i$：$Q$ 解析之后的语素。中文的话，一般就把分词作为语素，每个词就是一个语素；<br>$d$：表示一个被搜索文档；<br>$R(q_i,d)$：表示语素 $q_i$ 与 文档 $d$ 的相关性得分；<br>$W_i$：表示语素 $q_i$ 与的权重。常用 <code>IDF</code> 值作为权重。<br>$$IDF(q_i) = log \frac{N-n(q_i)+0.5}{n(q_i)+0.5}$$</p>
+<p>$N$：索引中的全部文档数；<br>$n(q_i)$：包含了$q_i$的文档数。  </p>
+<p>$$ R(q_i,d) = \frac{f_i·(k_1+1)}{f_i+K}·\frac{qf_i·(k_2+1)}{qf_i+k_2} $$<br>$$ K = k_1·(1-b+b·\frac{dl}{avg(dl)}) $$</p>
+<p>$k_1$,$k_2$,$b$ ：调节因子，根据经验通常设置为$k_1 = 2$,$b = 0.75$。作用：<br>$f_i$：表示$q_i$在$D$中出现的频率；<br>$qf_i$：表示$q_i$在$Query$中出现的频率；<br>$dl$：表示文档$D$的长度；<br>$avg(dl)$：文档集中所有文档的平均长度。<br>通常，$q_i$在$Query$中只出现一次，$qf_i=1$，公式可以化简为<br>$$ R(q_i,d) = \frac{f_i·(k_1+1)}{f_i+K} $$<br>$b$：调整文档长度对相关性影响的大小，$b$越大，文档长度影响越大。文档相对长度越长，$K$值越大，相关性得分越少。这很好理解，文档越长包含$q<em>i$的可能性就越大，相关性就要越弱。<br>综上，BM25算法的相关性得分公式总结为：<br>$$SCORE(Q,D) = \sum</em>{i}^n IDF(q_i)·\frac{f_i·(k_1+1)}{f_i+k_1·(1-b+b·\frac{dl}{avg(dl)})}$$    </p>
+<h2 id="python-源码"><a href="#python-源码" class="headerlink" title="python 源码"></a>python 源码</h2><p>python在gensim库中的BM25源码</p>
+<pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# Licensed under the GNU LGPL v2.1 - http://www.gnu.org/licenses/lgpl.html
+    import math
+from six import iteritems
+from six.moves import xrange
 
+
+# BM25 parameters.
+PARAM_K1 = 1.5
+PARAM_B = 0.75
+EPSILON = 0.25
+
+
+class BM25(object):
+
+    def __init__(self, corpus):
+        self.corpus_size = len(corpus)
+        self.avgdl = sum(map(lambda x: float(len(x)), corpus)) / self.corpus_size
+        self.corpus = corpus
+        self.f = []
+        self.df = {}
+        self.idf = {}
+        self.initialize()
+
+    def initialize(self):
+        for document in self.corpus:
+            frequencies = {}
+            for word in document:
+                if word not in frequencies:
+                    frequencies[word] = 0
+                frequencies[word] += 1
+            self.f.append(frequencies)
+
+            for word, freq in iteritems(frequencies):
+                if word not in self.df:
+                    self.df[word] = 0
+                self.df[word] += 1
+
+        for word, freq in iteritems(self.df):
+            self.idf[word] = math.log(self.corpus_size - freq + 0.5) - math.log(freq + 0.5)
+
+    def get_score(self, document, index, average_idf):
+        score = 0
+        for word in document:
+            if word not in self.f[index]:
+                continue
+            idf = self.idf[word] if self.idf[word] &gt;= 0 else EPSILON * average_idf
+            score += (idf * self.f[index][word] * (PARAM_K1 + 1)
+                      / (self.f[index][word] + PARAM_K1 * (1 - PARAM_B + PARAM_B * self.corpus_size / self.avgdl)))
+        return score
+
+    def get_scores(self, document, average_idf):
+        scores = []
+        for index in xrange(self.corpus_size):
+            score = self.get_score(document, index, average_idf)
+            scores.append(score)
+        return scores
+
+
+def get_bm25_weights(corpus):
+    bm25 = BM25(corpus)
+    average_idf = sum(map(lambda k: float(bm25.idf[k]), bm25.idf.keys())) / len(bm25.idf.keys())
+
+    weights = []
+    for doc in corpus:
+        scores = bm25.get_scores(doc, average_idf)
+        weights.append(scores)
+
+    return weights
+</code></pre><h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><pre><code>from gensim.summarization import bm25
+
+bm25Model = bm25.BM25(train_docments) # 训练模型
+average_idf = sum(map(lambda k: float(bm25Model.idf[k]), bm25Model.idf.keys())) / len(bm25Model.idf.keys())
+
+# 查询
+query = &quot;南方航空&quot;
+scores = bm25Model.get_scores(query,average_idf)
+idx = scores.index(max(scores))
+</code></pre>
       
     </div>
     
@@ -494,7 +578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -551,7 +635,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BM25"><span class="nav-number">1.</span> <span class="nav-text">BM25</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BM25"><span class="nav-number">1.</span> <span class="nav-text">BM25</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-源码"><span class="nav-number">2.</span> <span class="nav-text">python 源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用示例"><span class="nav-number">3.</span> <span class="nav-text">使用示例</span></a></li></ol></div>
             
 
           </div>
