@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/LSTM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/attention/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jemma">
@@ -282,7 +282,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/05/LSTM/" itemprop="url">LSTM 模型原理、细节及应用总结</a></h1>
+                <a class="post-title-link" href="/2017/12/05/attention/" itemprop="url">Attention注意力机制</a></h1>
         
 
         <div class="post-meta">
@@ -345,7 +345,7 @@
 
           
           
-             <span id="/2017/12/05/LSTM/" class="leancloud_visitors" data-flag-title="LSTM 模型原理、细节及应用总结">
+             <span id="/2017/12/05/attention/" class="leancloud_visitors" data-flag-title="Attention注意力机制">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -378,13 +378,12 @@
       
         
           
-          注：非原创，仅在学习中按自身理解思路整理了多篇内容。
-LSTM概况参考这里。
-LSTM要解决的问题&emsp; RNN在处理长期依赖时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来梯度消失（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是门限R
+          1.Attrntion概况1.1 解决的问题&emsp; 用在：基于RNN (LSTM 或 GRU)的 Encoder+Decoder 模型，是为了解决语义损失和信息稀释的问题的。  
+1.2 问题来源&emsp; 这涉及到 seq2seq 的缺点。一般的 seq2seq 模型的 encoder 和
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/05/LSTM/#more" rel="contents">
+            <a class="btn" href="/2017/12/05/attention/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -851,10 +850,6 @@ LSTM要解决的问题&emsp; RNN在处理长期依赖时会遇到巨大困难，
 
 
 
-  
-    
-
-    
   
 
 
