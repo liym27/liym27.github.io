@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="0508 来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)    1 精确匹配1.1 BM251.2 query likelihood(QL)语言模型的假设：文档d与查询q相关的概率 约">
+<meta name="description" content="题目：Song From PI: A Musically Plausible Network for Pop Music Generation   出处：ICLR 2017 论文地址    part 1：论文内容 主要写了模型相关的内容   概况用深度学习RNN模型结合先验音乐知识生成音乐。bottom layer 生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="公司名检索">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/公司名检索/index.html">
+<meta property="og:title" content="机器作曲 paper2 笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/机器作曲_paper1_笔记/index.html">
 <meta property="og:site_name" content="SHIELD">
-<meta property="og:description" content="0508 来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)    1 精确匹配1.1 BM251.2 query likelihood(QL)语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。$ relevance(q,a) =">
+<meta property="og:description" content="题目：Song From PI: A Musically Plausible Network for Pop Music Generation   出处：ICLR 2017 论文地址    part 1：论文内容 主要写了模型相关的内容   概况用深度学习RNN模型结合先验音乐知识生成音乐。bottom layer 生成melody（旋律），higher levels生成 drums和chord">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-09T03:22:22.656Z">
+<meta property="og:updated_time" content="2018-07-09T16:19:28.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="公司名检索">
-<meta name="twitter:description" content="0508 来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)    1 精确匹配1.1 BM251.2 query likelihood(QL)语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。$ relevance(q,a) =">
+<meta name="twitter:title" content="机器作曲 paper2 笔记">
+<meta name="twitter:description" content="题目：Song From PI: A Musically Plausible Network for Pop Music Generation   出处：ICLR 2017 论文地址    part 1：论文内容 主要写了模型相关的内容   概况用深度学习RNN模型结合先验音乐知识生成音乐。bottom layer 生成melody（旋律），higher levels生成 drums和chord">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/公司名检索/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/机器作曲_paper1_笔记/"/>
 
 
 
 
 
-  <title>公司名检索 | SHIELD</title>
+  <title>机器作曲 paper2 笔记 | SHIELD</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/公司名检索/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/机器作曲_paper1_笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jemma">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">公司名检索</h1>
+          <h1 class="post-title" itemprop="name headline">机器作曲 paper2 笔记</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T21:02:00+08:00">
-                2018-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T22:00:00+08:00">
+                2018-07-05
               </time>
             
 
@@ -309,7 +309,7 @@
 
           
           
-             <span id="/2018/05/04/公司名检索/" class="leancloud_visitors" data-flag-title="公司名检索">
+             <span id="/2018/07/05/机器作曲_paper1_笔记/" class="leancloud_visitors" data-flag-title="机器作曲 paper2 笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,25 +340,43 @@
       
 
       
-        <h1 id="0508"><a href="#0508" class="headerlink" title="0508"></a><font color="red">0508<font color="black"></font></font></h1><blockquote>
-<p>来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)  </p>
+        <ul>
+<li>题目：Song From PI: A Musically Plausible Network for Pop Music Generation  </li>
+<li>出处：ICLR 2017 <a href="https://arxiv.org/pdf/1611.03477v1.pdf" target="_blank" rel="noopener">论文地址</a>  </li>
+</ul>
+<h2 id="part-1：论文内容"><a href="#part-1：论文内容" class="headerlink" title="part 1：论文内容"></a>part 1：论文内容</h2><blockquote>
+<p>主要写了模型相关的内容  </p>
+<h3 id="概况"><a href="#概况" class="headerlink" title="概况"></a>概况</h3><p>用深度学习<strong>RNN模型</strong>结合<strong>先验音乐知识</strong>生成音乐。bottom layer 生成melody（旋律），higher levels生成 drums和chords.</p>
 </blockquote>
-<h2 id="1-精确匹配"><a href="#1-精确匹配" class="headerlink" title="1 精确匹配"></a>1 精确匹配</h2><h3 id="1-1-BM25"><a href="#1-1-BM25" class="headerlink" title="1.1 BM25"></a>1.1 BM25</h3><h3 id="1-2-query-likelihood-QL"><a href="#1-2-query-likelihood-QL" class="headerlink" title="1.2 query likelihood(QL)"></a>1.2 query likelihood(QL)</h3><p>语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。<br>$ relevance(q,a) = P(R=1|q,d) =&gt; p(q|d,R=1) $<br>query likelihood ranking 函数：$f(q,d) = p(q|d)$<br>表示搜索 document d 的用户输入 query q 的概率。   </p>
-<h4 id="1-2-1-概率模型基本概念"><a href="#1-2-1-概率模型基本概念" class="headerlink" title="1.2.1 概率模型基本概念"></a>1.2.1 概率模型基本概念</h4><p>$$ f(q,d) = p(R=1|q,d) = \frac{count(q,d,R=1)}{count(q,d)} $$<br>问题：对于数据集中没有的query，无法获取概率值。  </p>
-<h4 id="1-2-2-查询似然算法"><a href="#1-2-2-查询似然算法" class="headerlink" title="1.2.2 查询似然算法"></a>1.2.2 查询似然算法</h4><p>想办法避过上边的问题。在文档d1相关的前提下，用户输入q1的概率是多少。概率越高则q1与d1的相关度越高。<br>提出一个假设：</p>
-<p>### </p>
-<h2 id="模糊匹配"><a href="#模糊匹配" class="headerlink" title="模糊匹配"></a>模糊匹配</h2><h3 id="LSA"><a href="#LSA" class="headerlink" title="LSA"></a>LSA</h3><p>&emsp; 通过将term和document投影到低维潜在空间来解决词汇失配的方法。 </p>
-<h3 id="Dual-embedding-space-model-DESM"><a href="#Dual-embedding-space-model-DESM" class="headerlink" title="Dual embedding space model (DESM)"></a>Dual embedding space model (DESM)</h3><p>&emsp; 用预训练词向量，比较document中的每一个term 与每一个query term，计算得分。  </p>
-<h2 id="匹配位置"><a href="#匹配位置" class="headerlink" title="匹配位置"></a>匹配位置</h2><h3 id="dependence-model-DM"><a href="#dependence-model-DM" class="headerlink" title="dependence model (DM)"></a>dependence model (DM)</h3><hr>
-<h1 id="相关未整理"><a href="#相关未整理" class="headerlink" title="相关未整理"></a><font color="red">相关未整理<font color="black"></font></font></h1><h2 id="query-dependent-分数"><a href="#query-dependent-分数" class="headerlink" title="query dependent 分数"></a>query dependent 分数</h2><p><font color="red">0509<font color="black"></font></font></p>
-<hr>
-<h1 id="前期调研"><a href="#前期调研" class="headerlink" title="前期调研"></a><font color="red">前期调研<font color="black"></font></font></h1><p>现在的方法：  </p>
-<ol>
-<li>模糊匹配  </li>
-</ol>
-<p>数据分析：<br>公司名称：省市名称+关键词+公司属性+分公司+后缀等<br>处理省市信息、提取分公司信息、提取行业属性、</p>
-<h3 id="提取省市信息"><a href="#提取省市信息" class="headerlink" title="提取省市信息"></a>提取省市信息</h3><p>建立行政区划库</p>
-<p>关键字智能提示：<br>trie树</p>
+<h3 id="音乐理论和名词相关"><a href="#音乐理论和名词相关" class="headerlink" title="音乐理论和名词相关"></a>音乐理论和名词相关</h3><ul>
+<li><strong>note</strong>:音符，12个</li>
+<li><strong>bar</strong>:一个小的时间片段，每个bar里有8个音符</li>
+<li><strong>scale</strong>:音阶，是音符的一个子集，可以理解成一个音符序列，常用音阶有4种。详情看 -&gt; <a href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E9%98%B6" target="_blank" rel="noopener">维基百科</a></li>
+<li><strong>chord</strong> :和弦，详情看 -&gt; <a href="https://zh.wikipedia.org/wiki/%E5%92%8C%E5%BC%A6" target="_blank" rel="noopener">维基百科</a></li>
+<li><strong>The circle of Fifths</strong>：五度音环，详情看 -&gt; <a href="https://zh.wikipedia.org/wiki/%E4%BA%94%E5%BA%A6%E5%9C%88" target="_blank" rel="noopener">维基百科</a></li>
+<li><strong>melody</strong>：旋律  </li>
+<li><strong>drum</strong>:</li>
+</ul>
+<h3 id="音阶-THE-ROLE-OF-SCALE"><a href="#音阶-THE-ROLE-OF-SCALE" class="headerlink" title="音阶 THE ROLE OF SCALE"></a>音阶 THE ROLE OF SCALE</h3><p>作者统计发现，大部分音乐是遵循音阶规则的，因此用音阶去生成</p>
+<h3 id="melody生成两层RNN"><a href="#melody生成两层RNN" class="headerlink" title="melody生成两层RNN"></a>melody生成两层RNN</h3><p>用两个变量表示旋律。这两个变量分别表示：（1）按的key音调（应该是指音调吧）；（2）按下的时间（应该是指音长）；<br>一个RNN 根据scale(音阶)生成key （key layer）,另一个RNN生成 音长。  </p>
+<ul>
+<li><p><strong>key layer</strong><br>双层LSTM<br><strong>输入</strong>：结合多种特征的矩阵<br>y_{key}^{t-1}：<br>LookBack feature：由Google Magenta提出，可以使模型更容易记住近期的生成并在将来进行repeat。  // 细节需要读代码<br>Melody profile：计算当前时间周围2个bar范围内的音符直方图……。 // 不是特别明白<br><strong>输出</strong>：37维。3个八度音阶，每个有12个音符，加上一个silence（没有声音，应该是0，休止符）<br><strong>隐藏层</strong>：隐状态512<br>根据scale（音阶）生成，不同的scale生成得不同。  </p>
+</li>
+<li><p><strong>press layer</strong><br>两层LSTM<br><strong>输入</strong>：y^{t-1}_{prs}，y^{t}<em>{key}。<br><strong>输出</strong>：y^{t}\</em>{prs}  是长度为8的one-hot编码。<br><strong>隐藏层</strong>：512  </p>
+<blockquote>
+<p>时间长度设置细节还需要看代码  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="chord-和-drum-RNN"><a href="#chord-和-drum-RNN" class="headerlink" title="chord 和 drum RNN"></a>chord 和 drum RNN</h3><ul>
+<li><p><strong>chord layer</strong><br>统计发现99%以上的音乐使用的和弦是72种和弦之一，因此用72位的one-hot编码表示。chord（和弦）与melody（旋律）的关系是非常强的。<br>2层LSTM<br><strong>输入</strong>：y^{t-4}_{chd} 和 y^{t-3:t}<em>{key}<br><strong>输出</strong>：y^{t}\</em>{chd}   </p>
+</li>
+<li><p><strong>drum layer</strong><br>统计发现，所有drum的模式是持续半个bar(一个bar是8个音符)，94.6%的drums都使用的是100种常用的drums。<br><strong>输入</strong>：y^{t-4}_{drm} 和 y^{t-3:t}_{key}   </p>
+</li>
+</ul>
+<h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><ul>
+<li><a href="http://colinraffel.com/projects/lmd/" target="_blank" rel="noopener">MIDI</a>  </li>
+</ul>
 
       
     </div>
@@ -412,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Hexo相关/" rel="next" title="hexo相关">
-                <i class="fa fa-chevron-left"></i> hexo相关
+              <a href="/2018/05/04/公司名检索/" rel="next" title="公司名检索">
+                <i class="fa fa-chevron-left"></i> 公司名检索
               </a>
             
           </div>
@@ -422,8 +440,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/05/机器作曲_paper1_笔记/" rel="prev" title="机器作曲 paper2 笔记">
-                机器作曲 paper2 笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/05/机器作曲调研/" rel="prev" title="机器作曲调研">
+                机器作曲调研 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -567,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0508"><span class="nav-number">1.</span> <span class="nav-text">0508</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-精确匹配"><span class="nav-number">1.1.</span> <span class="nav-text">1 精确匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-BM25"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 BM25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-query-likelihood-QL"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 query likelihood(QL)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-概率模型基本概念"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.2.1 概率模型基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-查询似然算法"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">1.2.2 查询似然算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模糊匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSA"><span class="nav-number">1.2.1.</span> <span class="nav-text">LSA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dual-embedding-space-model-DESM"><span class="nav-number">1.2.2.</span> <span class="nav-text">Dual embedding space model (DESM)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匹配位置"><span class="nav-number">1.3.</span> <span class="nav-text">匹配位置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dependence-model-DM"><span class="nav-number">1.3.1.</span> <span class="nav-text">dependence model (DM)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关未整理"><span class="nav-number">2.</span> <span class="nav-text">相关未整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#query-dependent-分数"><span class="nav-number">2.1.</span> <span class="nav-text">query dependent 分数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前期调研"><span class="nav-number">3.</span> <span class="nav-text">前期调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提取省市信息"><span class="nav-number">3.0.1.</span> <span class="nav-text">提取省市信息</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#part-1：论文内容"><span class="nav-number">1.</span> <span class="nav-text">part 1：论文内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概况"><span class="nav-number">1.1.</span> <span class="nav-text">概况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐理论和名词相关"><span class="nav-number">1.2.</span> <span class="nav-text">音乐理论和名词相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音阶-THE-ROLE-OF-SCALE"><span class="nav-number">1.3.</span> <span class="nav-text">音阶 THE ROLE OF SCALE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#melody生成两层RNN"><span class="nav-number">1.4.</span> <span class="nav-text">melody生成两层RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chord-和-drum-RNN"><span class="nav-number">1.5.</span> <span class="nav-text">chord 和 drum RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集"><span class="nav-number">1.6.</span> <span class="nav-text">数据集</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -892,26 +910,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
