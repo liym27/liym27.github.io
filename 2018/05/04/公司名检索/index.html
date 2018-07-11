@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="SHIELD">
 <meta property="og:description" content="0508 来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)    1 精确匹配1.1 BM251.2 query likelihood(QL)语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。$ relevance(q,a) =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-09T03:22:22.656Z">
+<meta property="og:updated_time" content="2018-07-11T08:30:26.094Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="公司名检索">
 <meta name="twitter:description" content="0508 来自一篇文本检索的文章：分三大类：精确匹配（exact term matching），模糊匹配(inexact term matching)，匹配位置(match position)    1 精确匹配1.1 BM251.2 query likelihood(QL)语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。$ relevance(q,a) =">
@@ -346,7 +346,6 @@
 <h2 id="1-精确匹配"><a href="#1-精确匹配" class="headerlink" title="1 精确匹配"></a>1 精确匹配</h2><h3 id="1-1-BM25"><a href="#1-1-BM25" class="headerlink" title="1.1 BM25"></a>1.1 BM25</h3><h3 id="1-2-query-likelihood-QL"><a href="#1-2-query-likelihood-QL" class="headerlink" title="1.2 query likelihood(QL)"></a>1.2 query likelihood(QL)</h3><p>语言模型的假设：文档d与查询q相关的概率 约等于 在文档相关的前提下用户输入q的概率。<br>$ relevance(q,a) = P(R=1|q,d) =&gt; p(q|d,R=1) $<br>query likelihood ranking 函数：$f(q,d) = p(q|d)$<br>表示搜索 document d 的用户输入 query q 的概率。   </p>
 <h4 id="1-2-1-概率模型基本概念"><a href="#1-2-1-概率模型基本概念" class="headerlink" title="1.2.1 概率模型基本概念"></a>1.2.1 概率模型基本概念</h4><p>$$ f(q,d) = p(R=1|q,d) = \frac{count(q,d,R=1)}{count(q,d)} $$<br>问题：对于数据集中没有的query，无法获取概率值。  </p>
 <h4 id="1-2-2-查询似然算法"><a href="#1-2-2-查询似然算法" class="headerlink" title="1.2.2 查询似然算法"></a>1.2.2 查询似然算法</h4><p>想办法避过上边的问题。在文档d1相关的前提下，用户输入q1的概率是多少。概率越高则q1与d1的相关度越高。<br>提出一个假设：</p>
-<p>### </p>
 <h2 id="模糊匹配"><a href="#模糊匹配" class="headerlink" title="模糊匹配"></a>模糊匹配</h2><h3 id="LSA"><a href="#LSA" class="headerlink" title="LSA"></a>LSA</h3><p>&emsp; 通过将term和document投影到低维潜在空间来解决词汇失配的方法。 </p>
 <h3 id="Dual-embedding-space-model-DESM"><a href="#Dual-embedding-space-model-DESM" class="headerlink" title="Dual embedding space model (DESM)"></a>Dual embedding space model (DESM)</h3><p>&emsp; 用预训练词向量，比较document中的每一个term 与每一个query term，计算得分。  </p>
 <h2 id="匹配位置"><a href="#匹配位置" class="headerlink" title="匹配位置"></a>匹配位置</h2><h3 id="dependence-model-DM"><a href="#dependence-model-DM" class="headerlink" title="dependence model (DM)"></a>dependence model (DM)</h3><hr>

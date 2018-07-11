@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="SHIELD">
 <meta property="og:description" content="题目：Song From PI: A Musically Plausible Network for Pop Music Generation   出处：ICLR 2017 论文地址    part 1：论文内容 主要写了模型相关的内容    概况用深度学习RNN模型结合先验音乐知识生成音乐。bottom layer 生成melody（旋律），higher levels生成 drums和chor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-09T16:23:34.099Z">
+<meta property="og:updated_time" content="2018-07-11T08:30:14.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器作曲 paper1 笔记">
 <meta name="twitter:description" content="题目：Song From PI: A Musically Plausible Network for Pop Music Generation   出处：ICLR 2017 论文地址    part 1：论文内容 主要写了模型相关的内容    概况用深度学习RNN模型结合先验音乐知识生成音乐。bottom layer 生成melody（旋律），higher levels生成 drums和chor">
@@ -360,18 +360,18 @@
 <h3 id="音阶-THE-ROLE-OF-SCALE"><a href="#音阶-THE-ROLE-OF-SCALE" class="headerlink" title="音阶 THE ROLE OF SCALE"></a>音阶 THE ROLE OF SCALE</h3><p>作者统计发现，大部分音乐是遵循音阶规则的，因此用音阶去生成</p>
 <h3 id="melody生成两层RNN"><a href="#melody生成两层RNN" class="headerlink" title="melody生成两层RNN"></a>melody生成两层RNN</h3><p>用两个变量表示旋律。这两个变量分别表示：（1）按的key音调（应该是指音调吧）；（2）按下的时间（应该是指音长）；<br>一个RNN 根据scale(音阶)生成key （key layer）,另一个RNN生成 音长。  </p>
 <ul>
-<li><p><strong>key layer</strong><br>双层LSTM<br><strong>输入</strong>：结合多种特征的矩阵<br>y_{key}^{t-1}：<br>LookBack feature：由Google Magenta提出，可以使模型更容易记住近期的生成并在将来进行repeat。  // 细节需要读代码<br>Melody profile：计算当前时间周围2个bar范围内的音符直方图……。 // 不是特别明白<br><strong>输出</strong>：37维。3个八度音阶，每个有12个音符，加上一个silence（没有声音，应该是0，休止符）<br><strong>隐藏层</strong>：隐状态512<br>根据scale（音阶）生成，不同的scale生成得不同。  </p>
+<li><p><strong>key layer</strong><br>双层LSTM<br><strong>输入</strong>：结合多种特征的矩阵<br>$ y_{key}^{t-1} $：<br>LookBack feature：由Google Magenta提出，可以使模型更容易记住近期的生成并在将来进行repeat。  // 细节需要读代码<br>Melody profile：计算当前时间周围2个bar范围内的音符直方图……。 // 不是特别明白<br><strong>输出</strong>：37维。3个八度音阶，每个有12个音符，加上一个silence（没有声音，应该是0，休止符）<br><strong>隐藏层</strong>：隐状态512<br>根据scale（音阶）生成，不同的scale生成得不同。  </p>
 </li>
-<li><p><strong>press layer</strong><br>两层LSTM<br><strong>输入</strong>：y^{t-1}_{prs}，y^{t}<em>{key}。<br><strong>输出</strong>：y^{t}\</em>{prs}  是长度为8的one-hot编码。<br><strong>隐藏层</strong>：512  </p>
+<li><p><strong>press layer</strong><br>两层LSTM<br><strong>输入</strong>：$ y^{t-1}<em>{prs}，y^{t}</em>{key} $<br><strong>输出</strong>：$ y^{t}_{prs}$  是长度为8的one-hot编码。<br><strong>隐藏层</strong>：512  </p>
 <blockquote>
 <p>时间长度设置细节还需要看代码  </p>
 </blockquote>
 </li>
 </ul>
 <h3 id="chord-和-drum-RNN"><a href="#chord-和-drum-RNN" class="headerlink" title="chord 和 drum RNN"></a>chord 和 drum RNN</h3><ul>
-<li><p><strong>chord layer</strong><br>统计发现99%以上的音乐使用的和弦是72种和弦之一，因此用72位的one-hot编码表示。chord（和弦）与melody（旋律）的关系是非常强的。<br>2层LSTM<br><strong>输入</strong>：y^{t-4}_{chd} 和 y^{t-3:t}<em>{key}<br><strong>输出</strong>：y^{t}\</em>{chd}   </p>
+<li><p><strong>chord layer</strong><br>统计发现99%以上的音乐使用的和弦是72种和弦之一，因此用72位的one-hot编码表示。chord（和弦）与melody（旋律）的关系是非常强的。<br>2层LSTM<br><strong>输入</strong>：$ y^{t-4}<em>{chd} 和 y^{t-3:t}</em>{key} $<br><strong>输出</strong>：$ y^{t}_{chd} $    </p>
 </li>
-<li><p><strong>drum layer</strong><br>统计发现，所有drum的模式是持续半个bar(一个bar是8个音符)，94.6%的drums都使用的是100种常用的drums。<br><strong>输入</strong>：y^{t-4}_{drm} 和 y^{t-3:t}_{key}   </p>
+<li><p><strong>drum layer</strong><br>统计发现，所有drum的模式是持续半个bar(一个bar是8个音符)，94.6%的drums都使用的是100种常用的drums。<br><strong>输入</strong>：$ y^{t-4}<em>{drm} 和 y^{t-3:t}</em>{key} $    </p>
 </li>
 </ul>
 <h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><ul>
