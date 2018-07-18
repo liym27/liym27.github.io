@@ -79,28 +79,31 @@
 
 
 
-<meta name="description" content="注：非原创，仅在学习中按自身理解思路整理了多篇内容。 LSTM概况参考这里。 LSTM要解决的问题&amp;emsp; RNN在处理长期依赖时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来梯度消失（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是门限RNN,LST">
+<meta name="description" content="论文题目：MuseGAN: Multi-track Sequential Generative Adversarial Networks for Symbolic Music Generation and Accompaniment    2018 AAAI 论文地址, github, demo page, DataS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LSTM 模型原理、细节及应用总结">
-<meta property="og:url" content="http://yoursite.com/2017/12/05/LSTM/index.html">
+<meta property="og:title" content="机器作曲 Paper4 笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/18/机器作曲_paper4_笔记/index.html">
 <meta property="og:site_name" content="SHIELD">
-<meta property="og:description" content="注：非原创，仅在学习中按自身理解思路整理了多篇内容。 LSTM概况参考这里。 LSTM要解决的问题&amp;emsp; RNN在处理长期依赖时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来梯度消失（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是门限RNN,LSTM是门限RNN中最著名的一种。 LSTM是如何解决该问题的&amp;emsp; LSTM通过增加">
+<meta property="og:description" content="论文题目：MuseGAN: Multi-track Sequential Generative Adversarial Networks for Symbolic Music Generation and Accompaniment    2018 AAAI 论文地址, github, demo page, DataSet      本论文生成的音乐是多轨的，带有和弦、鼓声等等   Contri">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/YuFJYjm.png">
-<meta property="og:image" content="https://i.imgur.com/JncSwDZ.png">
-<meta property="og:image" content="https://i.imgur.com/ndBNndn.png">
-<meta property="og:image" content="https://i.imgur.com/H8IKU5q.png">
-<meta property="og:image" content="https://i.imgur.com/P4TuZnJ.png">
-<meta property="og:image" content="https://i.imgur.com/MpSSTN5.png">
-<meta property="og:image" content="https://i.imgur.com/b0CbFxR.png">
-<meta property="og:image" content="https://i.imgur.com/ZNzH3rf.png">
-<meta property="og:image" content="https://i.imgur.com/OgU36cx.png">
-<meta property="og:image" content="https://i.imgur.com/OIoOkMy.png">
-<meta property="og:updated_time" content="2018-06-27T03:24:58.708Z">
+<meta property="og:image" content="https://i.imgur.com/ILWVkOt.png ">
+<meta property="og:image" content="https://i.imgur.com/tQA6OSB.png ">
+<meta property="og:image" content="https://i.imgur.com/C1DXJff.png ">
+<meta property="og:image" content="https://i.imgur.com/yPF8s1i.png ">
+<meta property="og:image" content="https://i.imgur.com/mdSc2iD.png ">
+<meta property="og:image" content="https://i.imgur.com/uvXfAch.png ">
+<meta property="og:image" content="https://i.imgur.com/RZtMDo2.png ">
+<meta property="og:image" content="https://i.imgur.com/16nxtCw.png ">
+<meta property="og:image" content="https://i.imgur.com/xnqKlH0.png ">
+<meta property="og:image" content="https://i.imgur.com/DNa0ckM.png ">
+<meta property="og:image" content="https://i.imgur.com/IRuHPcO.png ">
+<meta property="og:image" content="https://i.imgur.com/mIDNiya.png ">
+<meta property="og:image" content="https://i.imgur.com/ZMdo3ak.png ">
+<meta property="og:updated_time" content="2018-07-18T12:46:43.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LSTM 模型原理、细节及应用总结">
-<meta name="twitter:description" content="注：非原创，仅在学习中按自身理解思路整理了多篇内容。 LSTM概况参考这里。 LSTM要解决的问题&amp;emsp; RNN在处理长期依赖时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来梯度消失（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是门限RNN,LSTM是门限RNN中最著名的一种。 LSTM是如何解决该问题的&amp;emsp; LSTM通过增加">
-<meta name="twitter:image" content="https://i.imgur.com/YuFJYjm.png">
+<meta name="twitter:title" content="机器作曲 Paper4 笔记">
+<meta name="twitter:description" content="论文题目：MuseGAN: Multi-track Sequential Generative Adversarial Networks for Symbolic Music Generation and Accompaniment    2018 AAAI 论文地址, github, demo page, DataSet      本论文生成的音乐是多轨的，带有和弦、鼓声等等   Contri">
+<meta name="twitter:image" content="https://i.imgur.com/ILWVkOt.png ">
 
 
 
@@ -130,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/05/LSTM/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/18/机器作曲_paper4_笔记/"/>
 
 
 
 
 
-  <title>LSTM 模型原理、细节及应用总结 | SHIELD</title>
+  <title>机器作曲 Paper4 笔记 | SHIELD</title>
   
 
 
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/05/LSTM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/机器作曲_paper4_笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jemma">
@@ -290,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LSTM 模型原理、细节及应用总结</h1>
+          <h1 class="post-title" itemprop="name headline">机器作曲 Paper4 笔记</h1>
         
 
         <div class="post-meta">
@@ -302,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T21:02:00+08:00">
-                2017-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T20:00:00+08:00">
+                2018-07-18
               </time>
             
 
@@ -313,39 +316,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/深度学习/" itemprop="url" rel="index">
-                    <span itemprop="name">深度学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -353,7 +323,7 @@
 
           
           
-             <span id="/2017/12/05/LSTM/" class="leancloud_visitors" data-flag-title="LSTM 模型原理、细节及应用总结">
+             <span id="/2018/07/18/机器作曲_paper4_笔记/" class="leancloud_visitors" data-flag-title="机器作曲 Paper4 笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,41 +354,42 @@
       
 
       
-        <p>注：非原创，仅在学习中按自身理解思路整理了多篇内容。</p>
-<h2 id="LSTM概况"><a href="#LSTM概况" class="headerlink" title="LSTM概况"></a>LSTM概况</h2><p>参考<a href="https://blog.csdn.net/xuanyuansen/article/details/61913886" target="_blank" rel="noopener">这里</a>。</p>
-<h3 id="LSTM要解决的问题"><a href="#LSTM要解决的问题" class="headerlink" title="LSTM要解决的问题"></a>LSTM要解决的问题</h3><p>&emsp; RNN在处理<strong>长期依赖</strong>时会遇到巨大困难，因为计算距离较远的节点之间的联系时会涉及雅克比矩阵的多次相乘，这会带来<strong>梯度消失</strong>（经常发生）或者梯度爆炸（较少发生）。为解决该问题最成功最广泛的是<strong>门限RNN</strong>,<strong>LSTM</strong>是门限RNN中最著名的一种。</p>
-<h3 id="LSTM是如何解决该问题的"><a href="#LSTM是如何解决该问题的" class="headerlink" title="LSTM是如何解决该问题的"></a>LSTM是如何解决该问题的</h3><p>&emsp; LSTM通过增加输入门限，遗忘门限和输出门限，使得自循环的权重是变化的，这样一来在模型参数固定的情况下，不同时刻的积分尺度可以动态改变，从而避免了梯度消失或者梯度膨胀的问题，解决长期依赖问题。  </p>
-<blockquote>
-<p>我还不是很理解</p>
-</blockquote>
-<h2 id="LSTM-详述"><a href="#LSTM-详述" class="headerlink" title="LSTM 详述"></a>LSTM 详述</h2><p>基本全部参考<a href="https://www.jianshu.com/p/9dc9f41f0b29" target="_blank" rel="noopener">这篇</a><br>&emsp; 所有 RNN 都具有一种重复神经网络模块的链式的形式。在标准的 RNN 中，这个重复的模块只有一个非常简单的结构，例如一个 tanh 层。LSTM 同样是这样的结构，但是重复的模块拥有一个不同的结构。不同于 单一神经网络层，这里是有四个，以一种非常特殊的方式进行交互。</p>
-<p><img src="https://i.imgur.com/YuFJYjm.png" alt="LSTM图示" title="LSTM 图示"></p>
-<h3 id="cell"><a href="#cell" class="headerlink" title="cell"></a>cell</h3><p>&emsp; LSTM 的关键是细胞状态，类似于传送带直接在整个链上运行，只有少量交互，信息在上边流传保持不变会很容易。</p>
-<blockquote>
-<p>大概这就是 LSTM 解决长期依赖的关键了吧。</p>
-</blockquote>
-<p><img src="https://i.imgur.com/JncSwDZ.png" alt="LSTM cell" title="LSTM cell"></p>
-<h3 id="门"><a href="#门" class="headerlink" title="门"></a>门</h3><p>&emsp; cell 的数据信息是通过门 (Gate)选择的。LSTM 有三个门来保护和控制细胞状态。<br>&emsp; 门是一种让信息选择式通过的方法，包含一个 sigmoid神经网络层和一个pointwise 乘法操作。   </p>
-<ul>
-<li><strong>sigmoid 层</strong>：输出 0-1 的数值，描述每部分有多少量可以通过。0表示不允许任何量通过，1表示允许任何量通过。  </li>
-<li><strong>pointwise</strong>: 。 </li>
+        <ul>
+<li>论文题目：MuseGAN: Multi-track Sequential Generative Adversarial Networks for Symbolic Music Generation and Accompaniment   </li>
+<li>2018 AAAI <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17286" target="_blank" rel="noopener">论文地址</a>, <a href="https://github.com/salu133445/musegan" target="_blank" rel="noopener">github</a>, <a href="https://salu133445.github.io/musegan/results" target="_blank" rel="noopener">demo page</a>, <a href="https://salu133445.github.io/lakh-pianoroll-dataset/" target="_blank" rel="noopener">DataSet</a>     </li>
+<li>本论文生成的音乐是多轨的，带有和弦、鼓声等等   <h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2></li>
+<li>MuseGAN<br>(1) a novel GAN-based for multi-track sequence generation;<br>(2) generate multi-track, polyphonic music. 基本还没有人多;<br>(3) human-AI cooperative, or music accompaniment;  </li>
+<li>Lakh Pianoroll Dataset (LPD)<br>一个新的数据集,173 997个多轨钢琴卷帘。  </li>
+<li>Pypianoroll<br>一个新的package  </li>
+<li>提出了 a few intra-track and inter-track objective metrics for evaluating artificial symbolic music.  </li>
 </ul>
-<blockquote>
-<p>这两个操作的作用原理，即为啥用sigmoid和pointwise，不是很理解。</p>
-</blockquote>
-<p><img src="https://i.imgur.com/ndBNndn.png" alt="lstm 门" title="LSTM"> </p>
-<h3 id="遗忘门"><a href="#遗忘门" class="headerlink" title="遗忘门"></a>遗忘门</h3><p>&emsp; 作用：遗忘门层决定从细胞状态中丢弃什么信息。<br>&emsp; 输入：h_ {t-1} 和 x<em>t。<br>&emsp; 输出：0-1的数值，作用在细胞状态 C</em>{t-1} 的每个数字。 1表示完全保留，0表示完全舍弃。<br><img src="https://i.imgur.com/H8IKU5q.png" alt="遗忘门" title="遗忘门"></p>
-<h3 id="输入门"><a href="#输入门" class="headerlink" title="输入门"></a>输入门</h3><p>&emsp; 作用：输入门决定什么样的新信息被更新到细胞状态中。<br>&emsp; 包含两部分：1. sigmoid层 决定什么值我们将要更新； 2.tanh层创建新的候选值向量，会被加入到细胞状态中。 lym 不是很理解。<br><img src="https://i.imgur.com/P4TuZnJ.png" alt="输入门" title="输入门"></p>
-<h3 id="更新细胞状态"><a href="#更新细胞状态" class="headerlink" title="更新细胞状态"></a>更新细胞状态</h3><p>&emsp; 遗忘门和输入门决定了要更新的内容，现在要实际执行了，将C_ {t-1}更新为C_t。<br><img src="https://i.imgur.com/MpSSTN5.png" alt="更新细胞状态" title="更新细胞状态"></p>
-<h3 id="输出门"><a href="#输出门" class="headerlink" title="输出门"></a>输出门</h3><p>&emsp; 输出门决定输出的信息。// 这句仿佛是废话。<br>&emsp; 输入：包含两部分：1. sigmoid层 决定细胞状态的哪个部分将被输出（我的理解：1表示完全保留，0表示完全舍弃）； 2.tanh层对细胞状态做处理（得到-1—1之间的值）。 lym 不是很理解tanh的作用，不要这个层感觉也说得通，将输入压缩？<br>&emsp; 输出：sigmoid 层和 tanh 层结果相乘，作为输出。<br><img src="https://i.imgur.com/b0CbFxR.png" alt="输出门" title="输出门"></p>
-<h2 id="LSTM-变体"><a href="#LSTM-变体" class="headerlink" title="LSTM 变体"></a>LSTM 变体</h2><h3 id="增加“peephole-connection”"><a href="#增加“peephole-connection”" class="headerlink" title="增加“peephole connection”"></a>增加“peephole connection”</h3><p>&emsp; 变化：让门层也接受细胞状态的输入。3个门层都加 peephole 或者个别门层添加。<br><img src="https://i.imgur.com/ZNzH3rf.png" alt="peephole" title="peephole"></p>
-<h3 id="coupled-忘记门输入门"><a href="#coupled-忘记门输入门" class="headerlink" title="coupled 忘记门输入门"></a>coupled 忘记门输入门</h3><p>&emsp; 变化：之前是 分别 确定忘记的和需要新添加的信息，这里是一同做出决定。<br>&emsp; 有点互补的意思：忘记门忘记的信息 在 输入门更新， 输入门更新的 在 忘记门 丢弃。<br><img src="https://i.imgur.com/OgU36cx.png" alt="coupled"></p>
-<h3 id="Gated-Recurrent-Unit-GRU"><a href="#Gated-Recurrent-Unit-GRU" class="headerlink" title="Gated Recurrent Unit (GRU)"></a>Gated Recurrent Unit (GRU)</h3><p>&emsp; 变化：1.将忘记门和输入门合成为一个单一的更新门； 2.混合了细胞状态和隐藏状态； 3.其他一些改动。<br>&emsp; 结果：比 LSTM 要简单。<br><img src="https://i.imgur.com/OIoOkMy.png" alt="GRU"></p>
-<h2 id="LSTM-应用"><a href="#LSTM-应用" class="headerlink" title="LSTM 应用"></a>LSTM 应用</h2><h3 id="机器翻译等"><a href="#机器翻译等" class="headerlink" title="机器翻译等"></a>机器翻译等</h3><p>略。将另写博客讨论。</p>
-<hr>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>1.音乐具有<strong>层次</strong>结构，具有更高层次的构建块（例如，短语），由较小的递归模式组成。   </p>
+<center><br><img src="https://i.imgur.com/ILWVkOt.png " width="60%"><br>音乐的多层次结构<br></center>
+
+<p>2.<strong>多轨道</strong>，如钢琴、吉他、鼓、贝斯等等    </p>
+<center><br><img src="https://i.imgur.com/tQA6OSB.png " width="60%"><br>multi-track<br></center><br>3.自然语言生成和单音音乐生成的成功可能不容易推广到<strong>复调</strong>音乐生成。<br><br><center><br><img src="https://i.imgur.com/C1DXJff.png " width="60%"><br>复调<br></center><br>## 模型算法<br>- 采用 GAN;<br>- 判别器用 CNN;<br>- 生成器也用 CNN，1个生成器生成1个 track 的音乐，多个 track 通过“指挥”结合在一起，同时针对不同的音乐特性生成器的细节不同，再讲多个特性结合。<br>### 数据表示<br>- 用钢琴卷帘(pinao-roll)，这样就可以当做一个图片来处理了。<br>&gt; 这一点与其它论文中的不同，一般我们对于这类数据都是当成时间序列的，本论文通过分析音乐层次结构，把 MIDI 转为钢琴卷帘矩阵，然后看做一个大小固定的黑白图片。<br><br><center><br><img src="https://i.imgur.com/yPF8s1i.png " width="60%"><br>钢琴卷帘表示数据 1 单轨<br></center>
+
+<center><br><img src="https://i.imgur.com/mdSc2iD.png " width="60%"><br>钢琴卷帘表示数据 2 多轨<br></center>
+
+<center><br><img src="https://i.imgur.com/uvXfAch.png " width="60%"><br>全部数据 4 <em> 96 </em> 84 * 5<br></center><br>—<br>### GAN<br><br><center><br><img src="https://i.imgur.com/RZtMDo2.png " width="60%"><br>GAN<br></center><br>—<br>### generator 生成器<br>#### 生成1个track的GAN模型<br>- CNN：没有用 RNN，将数据当作矩阵处理。<br>&gt; 我的想法：同一个 bar 或许固定的模式，所以用CNN来学习。但是不同的bar的模式或许不同，但是时间上是有关联的，或许也可以用一下RNN。尤其是如果生成更多的bar，甚至生成整首乐曲，猜想RNN会好一些。<br><br>- 输入：random noise<br>- 输出：4个bar的表示<br><br><center><br><img src="https://i.imgur.com/16nxtCw.png " width="60%"><br>生成1个track的生成器<br></center><br>#### 生成多个track<br>- 问题：如果每个track独立生成，那么相互之间是没有关联的，类似于不同的音乐家弹奏的不同东西瞎结合在了一起。<br>- 解决：有一个指挥家，“指挥”各个track。这样子，每个track有自己的特性多个track又有一个共同的目标。<br><br><center><br><img src="https://i.imgur.com/xnqKlH0.png " width="60%"><br>生成 multitrack 1<br></center>
+
+<center><br><img src="https://i.imgur.com/DNa0ckM.png " width="60%"><br>生成 multitrack 2<br></center>  
+
 <ul>
-<li>参考：<br>1.原文<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">Understanding LSTM Networks</a> 和 译文<a href="https://www.jianshu.com/p/9dc9f41f0b29" target="_blank" rel="noopener">译 理解 LSTM 网络</a>；<br>2.<a href="https://blog.csdn.net/xuanyuansen/article/details/61913886" target="_blank" rel="noopener">LSTM算法原理简介及Tutorial</a>。</li>
+<li>问题：对于不同的成分，如和弦(chords),风格style,旋律melody,节奏groove，可能与 time/track 相关/不相关。  </li>
+<li>解决：若与time相关，如chords(在不同的时间是不一样)，那么生成的每个bar是不同的，否则相同。若与 track 相关，如 groove (不同的track是不一样的，钢琴与吉他的groove就不一样)</li>
 </ul>
+<center><br><img src="https://i.imgur.com/IRuHPcO.png " width="60%"><br>多个特性合在一起<br></center><br>—<br>#### 判别器<br>- CNN<br>图略<br>#### MuseGAN<br><center><br><img src="https://i.imgur.com/mIDNiya.png "><br>MuseGAN<br></center> 
+
+<p><center><br><img src="https://i.imgur.com/ZMdo3ak.png " width="80%"><br>accompaniment system<br></center></p>
+<h2 id="看了展示之后我的理解"><a href="#看了展示之后我的理解" class="headerlink" title="看了展示之后我的理解"></a>看了展示之后我的理解</h2><ul>
+<li>如果有作者的展示或者其他人的笔记可以看的话，一定要先看！     </li>
+<li>本文的优点：用CNN处理  </li>
+<li>缺点：目前仅在处理1个phrase(4个bar)，还不是1个paragraph，更不是1首歌。因为一个bar是有模式可循的，所以可以用CNN，但是后边如果做更长时间的音乐的话，没有模式了，那就要加入RNN了吧  </li>
+<li>疑问：数据的不同track是怎么得到的？</li>
+</ul>
+<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><h3 id="Full-song-generation"><a href="#Full-song-generation" class="headerlink" title="Full song generation"></a>Full song generation</h3><p>本文只生成了 1 个 phrase (4个 bar)，之后应该要生成整首歌等更高层次。  </p>
+<h3 id="Cross-modal-Generation"><a href="#Cross-modal-Generation" class="headerlink" title="Cross-modal Generation"></a>Cross-modal Generation</h3><p>比如 音乐+视频 结合， 音乐+歌词 结合； 视频+文本 结合； </p>
 
       
     </div>
@@ -472,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/05/词向量/" rel="next" title="词向量">
-                <i class="fa fa-chevron-left"></i> 词向量
+              <a href="/2018/07/09/机器作曲_paper2_笔记/" rel="next" title="机器作曲 Paper2 笔记">
+                <i class="fa fa-chevron-left"></i> 机器作曲 Paper2 笔记
               </a>
             
           </div>
@@ -481,10 +452,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/05/kaggle课程学习/" rel="prev" title="kaggle">
-                kaggle <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +594,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM概况"><span class="nav-number">1.</span> <span class="nav-text">LSTM概况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM要解决的问题"><span class="nav-number">1.1.</span> <span class="nav-text">LSTM要解决的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM是如何解决该问题的"><span class="nav-number">1.2.</span> <span class="nav-text">LSTM是如何解决该问题的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-详述"><span class="nav-number">2.</span> <span class="nav-text">LSTM 详述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell"><span class="nav-number">2.1.</span> <span class="nav-text">cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#门"><span class="nav-number">2.2.</span> <span class="nav-text">门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遗忘门"><span class="nav-number">2.3.</span> <span class="nav-text">遗忘门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入门"><span class="nav-number">2.4.</span> <span class="nav-text">输入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新细胞状态"><span class="nav-number">2.5.</span> <span class="nav-text">更新细胞状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出门"><span class="nav-number">2.6.</span> <span class="nav-text">输出门</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-变体"><span class="nav-number">3.</span> <span class="nav-text">LSTM 变体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加“peephole-connection”"><span class="nav-number">3.1.</span> <span class="nav-text">增加“peephole connection”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coupled-忘记门输入门"><span class="nav-number">3.2.</span> <span class="nav-text">coupled 忘记门输入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gated-Recurrent-Unit-GRU"><span class="nav-number">3.3.</span> <span class="nav-text">Gated Recurrent Unit (GRU)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-应用"><span class="nav-number">4.</span> <span class="nav-text">LSTM 应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器翻译等"><span class="nav-number">4.1.</span> <span class="nav-text">机器翻译等</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#看了展示之后我的理解"><span class="nav-number">3.</span> <span class="nav-text">看了展示之后我的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">4.</span> <span class="nav-text">Future Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-song-generation"><span class="nav-number">4.1.</span> <span class="nav-text">Full song generation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-modal-Generation"><span class="nav-number">4.2.</span> <span class="nav-text">Cross-modal Generation</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -952,26 +919,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   
 
 
