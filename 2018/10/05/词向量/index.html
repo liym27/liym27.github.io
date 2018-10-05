@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="文本摘要调研emmm 整理得有点乱  评价指标、数据集、方法    1. 方法按文档数量分为单文档摘要和多文档摘要。按实现方式分为抽取式（extractive）和生成式(abstractive)抽取式：只需要从原文中找出相对来说重要的句子来组成输出即可，系统只需要用模型来选择出信息量大的句子然后按照自然序组合起来就是摘">
+<meta name="description" content="1 语言表示(Representation) 问：怎么表示语言数据，使得神经网络能够处理呢？   答：先看语音和图像是怎么表示数据的。语音中，用音频频谱序列向量所构成的矩阵作为模型的输入；在图像中，用图像的像素构成的矩阵数据作为模型的输入。这些都可以很好表示语音/图像数据。有人提到，语音、图像属于比较自然的低级数据表示">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文本摘要调研">
-<meta property="og:url" content="http://yoursite.com/2018/04/04/文本摘要调研/index.html">
+<meta property="og:title" content="词向量">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/词向量/index.html">
 <meta property="og:site_name" content="SHIELD">
-<meta property="og:description" content="文本摘要调研emmm 整理得有点乱  评价指标、数据集、方法    1. 方法按文档数量分为单文档摘要和多文档摘要。按实现方式分为抽取式（extractive）和生成式(abstractive)抽取式：只需要从原文中找出相对来说重要的句子来组成输出即可，系统只需要用模型来选择出信息量大的句子然后按照自然序组合起来就是摘要了。但是摘要的连贯性一致性很难保证。比如代词问题。abstractIve：随着">
+<meta property="og:description" content="1 语言表示(Representation) 问：怎么表示语言数据，使得神经网络能够处理呢？   答：先看语音和图像是怎么表示数据的。语音中，用音频频谱序列向量所构成的矩阵作为模型的输入；在图像中，用图像的像素构成的矩阵数据作为模型的输入。这些都可以很好表示语音/图像数据。有人提到，语音、图像属于比较自然的低级数据表示形式，在图像和语音领域最基本的数据是信号数据，我们可以通过一些距离度量，判断信号">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20150111184853151?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGltZTE5OTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-06-27T06:48:55.998Z">
+<meta property="og:image" content="https://i.imgur.com/yKtLY9j.png">
+<meta property="og:image" content="https://i.imgur.com/A8mTEdl.png">
+<meta property="og:updated_time" content="2018-10-05T09:10:49.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文本摘要调研">
-<meta name="twitter:description" content="文本摘要调研emmm 整理得有点乱  评价指标、数据集、方法    1. 方法按文档数量分为单文档摘要和多文档摘要。按实现方式分为抽取式（extractive）和生成式(abstractive)抽取式：只需要从原文中找出相对来说重要的句子来组成输出即可，系统只需要用模型来选择出信息量大的句子然后按照自然序组合起来就是摘要了。但是摘要的连贯性一致性很难保证。比如代词问题。abstractIve：随着">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20150111184853151?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGltZTE5OTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta name="twitter:title" content="词向量">
+<meta name="twitter:description" content="1 语言表示(Representation) 问：怎么表示语言数据，使得神经网络能够处理呢？   答：先看语音和图像是怎么表示数据的。语音中，用音频频谱序列向量所构成的矩阵作为模型的输入；在图像中，用图像的像素构成的矩阵数据作为模型的输入。这些都可以很好表示语音/图像数据。有人提到，语音、图像属于比较自然的低级数据表示形式，在图像和语音领域最基本的数据是信号数据，我们可以通过一些距离度量，判断信号">
+<meta name="twitter:image" content="https://i.imgur.com/yKtLY9j.png">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/04/文本摘要调研/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/05/词向量/"/>
 
 
 
 
 
-  <title>文本摘要调研 | SHIELD</title>
+  <title>词向量 | SHIELD</title>
   
 
 
@@ -264,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/04/文本摘要调研/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/词向量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jemma">
@@ -281,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">文本摘要调研</h1>
+          <h1 class="post-title" itemprop="name headline">词向量</h1>
         
 
         <div class="post-meta">
@@ -293,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-04T21:02:00+08:00">
-                2018-04-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T17:10:00+08:00">
+                2018-10-05
               </time>
             
 
@@ -311,7 +312,7 @@
 
           
           
-             <span id="/2018/04/04/文本摘要调研/" class="leancloud_visitors" data-flag-title="文本摘要调研">
+             <span id="/2018/10/05/词向量/" class="leancloud_visitors" data-flag-title="词向量">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,74 +343,107 @@
       
 
       
-        <h1 id="文本摘要调研"><a href="#文本摘要调研" class="headerlink" title="文本摘要调研"></a>文本摘要调研</h1><p>emmm 整理得有点乱</p>
-<blockquote>
-<p>评价指标、数据集、方法  </p>
-</blockquote>
-<h2 id="1-方法"><a href="#1-方法" class="headerlink" title="1. 方法"></a>1. 方法</h2><p>按文档数量分为单文档摘要和多文档摘要。按实现方式分为抽取式（extractive）和生成式(abstractive)<br>抽取式：只需要从原文中找出相对来说重要的句子来组成输出即可，系统只需要用模型来选择出信息量大的句子然后按照自然序组合起来就是摘要了。但是摘要的连贯性一致性很难保证。比如代词问题。<br>abstractIve：随着 deep learning技术在nlp中的深入，尤其是seq2seq+attention模型的横行，abstractIve式的摘要研究提高了一个level。<br>当前大多数应用的系统都是抽取式的。  </p>
-<blockquote>
-<p>这两种实现方式的模型算法区别和优缺点</p>
-</blockquote>
-<h3 id="1-1-生成式"><a href="#1-1-生成式" class="headerlink" title="1.1 生成式"></a>1.1 生成式</h3><h4 id="基本模型结构"><a href="#基本模型结构" class="headerlink" title="基本模型结构"></a>基本模型结构</h4><p>编码器(encoder)+解码器(decoder)，即seq2seq框架。还要加上attention。</p>
-<ul>
-<li>基于递归神经网络的模型<br>目前最好的基于RNN的seq2seq生成式文本摘要模型之一来自Salesforce.在基本架构上，使用了attention机制和强化学习。  </li>
-<li>基于卷积神经网络的模型<br>基于CNN的自动文本摘要模型中，最具代表性的是由Facebook提出的ConvS2S模型，它的encoder和decoder部分都是CNN，同时也加入了attention。  </li>
+        <h2 id="1-语言表示-Representation"><a href="#1-语言表示-Representation" class="headerlink" title="1 语言表示(Representation)"></a>1 语言表示(Representation)</h2><ul>
+<li>问：怎么表示语言数据，使得神经网络能够处理呢？  </li>
+<li>答：先看语音和图像是怎么表示数据的。语音中，用音频频谱序列向量所构成的矩阵作为模型的输入；在图像中，用图像的像素构成的矩阵数据作为模型的输入。这些都可以很好表示语音/图像数据。<br>有人提到，语音、图像属于比较自然的低级数据表示形式，在图像和语音领域最基本的数据是信号数据，我们可以通过一些距离度量，判断信号是否相似，判断两幅图片是否相似的时候，只需要通过观察图片本身就能给出回答。而语言高度抽象，很难刻画词语之间的联系，比如“麦克风”和“话筒”这样的同义词，从字面上也难以看出这两者意思相同，即“语义鸿沟”现象。<br>因此，有效地表示语言句子非常重要！  </li>
 </ul>
-<p>encoder-decoder：先用encoder，将输入编码到语义空间，得到一个固定维数的向量，表示输入的语义；然后decoder，将这个语义向量解码，获得所需要的输出，如果输出是文本的话，那么decoder通常就是语言模型。  </p>
-<p>attention:略。可参考这个专栏的这篇—— <a href="https://zhuanlan.zhihu.com/p/31547842?group_id=919491436542722048" target="_blank" rel="noopener">深度学习中Attention Mechanism详细介绍：原理、分类及应用</a>  </p>
-<h4 id="encoder"><a href="#encoder" class="headerlink" title="encoder"></a>encoder</h4><p>&emsp;对输入进行编码  </p>
-<ol>
-<li>bag-of-words encoder  </li>
-<li>convolutional encoder  </li>
-<li>attention based encoder  </li>
-<li>其他  <h4 id="decoder"><a href="#decoder" class="headerlink" title="decoder"></a>decoder</h4>&emsp; 语言模型，用来生成摘要。NNLM等。  <h4 id="generate-summaries"><a href="#generate-summaries" class="headerlink" title="generate summaries"></a>generate summaries</h4>&emsp; 常用beam search。  </li>
+<h3 id="1-1-词的表示方法之One-Hot"><a href="#1-1-词的表示方法之One-Hot" class="headerlink" title="1.1 词的表示方法之One Hot"></a>1.1 词的表示方法之One Hot</h3><p>&emsp;细节不再多说。  </p>
+<ul>
+<li>缺点：维度大；词与词之间是孤立的，无法表示词与词之间的语义信息！ </li>
+</ul>
+<h3 id="1-2-词的分布式表示-Distributed-Reprensentation"><a href="#1-2-词的分布式表示-Distributed-Reprensentation" class="headerlink" title="1.2 词的分布式表示(Distributed Reprensentation)"></a>1.2 词的分布式表示(Distributed Reprensentation)</h3><p>&emsp;词是承载语义的最基本的单元，而传统的独热表示（one-hot representation）仅仅将词符号化，不包含任何语义信息。如何将语义融入到词表示中？下表总结了词表示的发展。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>人物</th>
+<th>事件  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1954</td>
+<td>Harris</td>
+<td>提出分布假说：上下文相似的词，其语义也相似  </td>
+</tr>
+<tr>
+<td>1957</td>
+<td>Firth</td>
+<td>分布式假说进一步阐述和明确：词的语义由其上下文决定  </td>
+</tr>
+<tr>
+<td>90年代初</td>
+<td>Dagan和Schütze等人</td>
+<td>词空间模型</td>
+</tr>
+<tr>
+<td>之后的多年</td>
+<td>\</td>
+<td>基于矩阵的分布表示</td>
+</tr>
+<tr>
+<td>1992</td>
+<td>Brown等人</td>
+<td>基于聚类的分布式表示  </td>
+</tr>
+<tr>
+<td>2006后</td>
+<td>\</td>
+<td>基于神经网络的分布式表示</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-分布式表示"><a href="#2-分布式表示" class="headerlink" title="2 分布式表示"></a>2 分布式表示</h2><p>&emsp;主要分为三类：基于矩阵的分布式表示、基于聚类的分布式表示、基于神经网络的分布式表示。这三种方法使用了不同的技术手段，但是它们都是基于分布假说，核心思想也都由两部分组成：一是选择一种方式描述上下文，二是选择一种模型刻画目标词与上下文之间的关系。  </p>
+<h3 id="2-1-基于矩阵的分布式表示"><a href="#2-1-基于矩阵的分布式表示" class="headerlink" title="2.1 基于矩阵的分布式表示"></a>2.1 基于矩阵的分布式表示</h3><p>&emsp;这类方法需要构建一个“词-上下文”矩阵，每行对应一个词，每列表示一种不同的上下文，矩阵中的每个元素对应相关词和上下文的共现次数（直接使用原始共现次数作为矩阵的值在大多数情况下效果并不好，因此多种加权和平滑方法被提出）。该方法分为以下三步：  </p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step1</td>
+<td>选取上下文</td>
+<td>法1：将词所在的文档作为上下文，形成“词-文档”矩阵；<br>法2：将词附近上下文中的词（如上下文窗口中的5个词）作为上下文，形成“词-词”矩阵；<br>法3：将词附近的n元词组(n-gram)作为上下文，形成“词-n元组”矩阵。   </td>
+</tr>
+<tr>
+<td>Step2</td>
+<td>确定矩阵中各元素的值</td>
+<td>常用的有 tf-idf、PMI 和直接取 log。  </td>
+</tr>
+<tr>
+<td>Step3</td>
+<td>矩阵分解（可选）</td>
+<td>奇异值分解（SVD）、非负矩阵分解（NMF）、典型关联分析（CCA）、HPCA</td>
+</tr>
+</tbody>
+</table>
+<p>&emsp;经典方法LSA 就是使用词文档矩阵，tf-idf作为元素值，并用SVD分解。<br>&emsp;最新代表作：Global Vector模型（GloVe）是一种对“词-词”矩阵进行分解从而得到词表示的方法。  </p>
+<h3 id="2-2-基于聚类的分布式表示"><a href="#2-2-基于聚类的分布式表示" class="headerlink" title="2.2 基于聚类的分布式表示"></a>2.2 基于聚类的分布式表示</h3><p>&emsp;这类方法通过聚类手段构建词与其上下文之间的关系。其中最经典的方法是布朗聚类（Brown clustering）。</p>
+<h3 id="2-3-基于神经网络的分布式表示"><a href="#2-3-基于神经网络的分布式表示" class="headerlink" title="2.3 基于神经网络的分布式表示"></a>2.3 基于神经网络的分布式表示</h3><h4 id="2-3-1-神经网络语言模型概念"><a href="#2-3-1-神经网络语言模型概念" class="headerlink" title="2.3.1 神经网络语言模型概念"></a>2.3.1 神经网络语言模型概念</h4><p>&emsp;同样基于分布假说，核心依然是上下文的表示以及上下文与目标词之间的关系的建模。<br>&emsp;构建上下文与目标词之间的关系，最自然的一种思路就是使用语言模型。从历史上看，早期的词向量只是神经网络语言模型的副产品。同时，神经网络语言模型对后期词向量的发展方向有着决定性的作用。</p>
+<blockquote>
+<p>神经网络语言模型相关内容在另一篇文章中写过，主要讨论了语言模型而不是词向量，但是细节可以参考。  </p>
+</blockquote>
+<p>&emsp; 语言模型可以对一段文本的概率进行估计，可以参考另一篇文章<font color="red">// TODO<font color="b">。<br>&emsp; 神经网络语言模型主要有以下几种：<br><img src="https://i.imgur.com/yKtLY9j.png" alt=""></font></font></p>
+<p>&emsp; 除此之外，还有RNN语言模型。  </p>
+<h4 id="2-3-2-实现"><a href="#2-3-2-实现" class="headerlink" title="2.3.2 实现"></a>2.3.2 实现</h4><p>&emsp;上边提到的几个神经网络语言模型，只是逻辑概念上的东西，具体得通过设计实现出来。<br>&emsp;实现 Skip-gram 和 CBOW 的工具，是 word2vec。实现 C&amp;W的是 SENNA。此外还有 FastText、WordRank、EMLo.     </p>
+<ul>
+<li>word2vec与 FastText 对比：<br>fasttext是 word2vec 中 cbow + h-softmax 的灵活运用。灵活体现在两方面：<br>（1）输入层：word2vec是窗口内的词term；fasttext是整个句子的内容，包括term，也包括 n-gram的内容。<br>（2）输出层：word2vec对应的是每一个term，计算某term的概率最大；fasttext 的输出层对应的是分类的label。<br>两者本质的不同，体现在 h-softmax的使用：<br>&emsp; Wordvec的目的是得到词向量，该词向量 最终是在输入层得到，输出层对应的 h-softmax 也会生成一系列的向量，但最终都被抛弃，不会使用。<br>fasttext则充分利用了h-softmax的分类功能，遍历分类树的所有叶节点，找到概率最大的label（一个或者N个）</li>
+</ul>
+<h3 id="2-4-分布表示模型小结"><a href="#2-4-分布表示模型小结" class="headerlink" title="2.4 分布表示模型小结"></a>2.4 分布表示模型小结</h3><p><img src="https://i.imgur.com/A8mTEdl.png" alt=""></p>
+<h2 id="3-小结"><a href="#3-小结" class="headerlink" title="3 小结"></a>3 小结</h2><ol>
+<li>选择一个合适领域的语料，在此前提下，语料规模越大越好。使用大规模的语料进行训练，可以普遍提升词向量的性能，如果使用领域内的语料，对同领域的任务会有显著的提升。</li>
+<li>选择一个合适的模型。复杂的模型相比简单的模型，在较大的语料中才有优势。简单的模型在绝大多数情况下已经足够好。预测目标词的模型（以外的所有模型）比目标词与上下文呈组合关系的模型（C&amp;W 模型）在多个任务中有更好的性能。</li>
+<li>训练时，迭代优化的终止条件最好根据具体任务的验证集来判断，或者近似地选取其它类似的任务作为指标，但是不应该选用训练词向量时的损失函数。</li>
+<li>词向量的维度一般需要选择 50 维及以上，特别当衡量词向量的语言学特性时，词向量的维度越大，效果越好。  </li>
+<li>【重点】做NLP任务要用到词向量的时候，要么选择使用别人训练好的词向量，注意，得使用相同语料内容领域的词向量；要么自己训练自己的词向量。我建议是前者，因为……坑太多了。</li>
 </ol>
-<h3 id="1-2-抽取式"><a href="#1-2-抽取式" class="headerlink" title="1.2 抽取式"></a>1.2 抽取式</h3><p>将问题转变为排序问题 -&gt; 找文档中最重要的几句话<br>指标：相关性和新颖性。<br>思路：预处理 -&gt; 词、句表示 -&gt; 排序 -&gt; 后处理（新颖性考虑）</p>
-<h4 id="排序：两种常见方法"><a href="#排序：两种常见方法" class="headerlink" title="排序：两种常见方法"></a>排序：两种常见方法</h4><h5 id="（1）图排序"><a href="#（1）图排序" class="headerlink" title="（1）图排序"></a>（1）图排序</h5><p>代表算法有TextRank和LexRank。  </p>
-<h5 id="（2）基于特征"><a href="#（2）基于特征" class="headerlink" title="（2）基于特征"></a>（2）基于特征</h5><p>代表算法是TextTeaser。    </p>
-<h4 id="后处理"><a href="#后处理" class="headerlink" title="后处理"></a>后处理</h4><p>增加惩罚因子将新颖性考虑进去。   MMR算法（Maximum Margin Relevance）</p>
-<h2 id="2-评价指标ROUGE"><a href="#2-评价指标ROUGE" class="headerlink" title="2 评价指标ROUGE"></a>2 评价指标ROUGE</h2><p>细节参考这篇论文<a href="http://www.aclweb.org/anthology/W04-1013" target="_blank" rel="noopener">ROUGE: A Package for Automatic Evaluation of Summaries</a><br>ROUGE:比较简单，细节先略过了，可参考<a href="https://en.wikipedia.org/wiki/ROUGE_(metric" target="_blank" rel="noopener">维基百科</a>)，或者<a href="https://blog.csdn.net/qq_25222361/article/details/78694617" target="_blank" rel="noopener">这篇博客</a> </p>
-<h3 id="ROUGE-1、ROUGE-2、ROUGE-N"><a href="#ROUGE-1、ROUGE-2、ROUGE-N" class="headerlink" title="ROUGE-1、ROUGE-2、ROUGE-N"></a>ROUGE-1、ROUGE-2、ROUGE-N</h3><h3 id="ROUGE-L"><a href="#ROUGE-L" class="headerlink" title="ROUGE-L"></a>ROUGE-L</h3><p>基于最长公共子序列</p>
-<h3 id="ROUGE-W-加权的ROUGE-L"><a href="#ROUGE-W-加权的ROUGE-L" class="headerlink" title="ROUGE-W 加权的ROUGE-L"></a>ROUGE-W 加权的ROUGE-L</h3><h3 id="ROUGE-S"><a href="#ROUGE-S" class="headerlink" title="ROUGE-S"></a>ROUGE-S</h3><p>使用了skip-grams</p>
-<h3 id="多参考摘要的情况"><a href="#多参考摘要的情况" class="headerlink" title="多参考摘要的情况"></a>多参考摘要的情况</h3><p><img src="https://img-blog.csdn.net/20150111184853151?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGltZTE5OTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Rouge方法总结"></p>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>这里的语料分为两种，一种是用来训练深度学习模型的大型语料，一种是用来参加评测的小型语料。</p>
-<p>1、<a href="https://duc.nist.gov/" target="_blank" rel="noopener">DUC</a></p>
-<p>这个网站提供了文本摘要的比赛，2001-2007年在这个网站，2008年开始换到这个网站TAC。很官方的比赛，各大文本摘要系统都会在这里较量一番，一决高下。这里提供的数据集都是小型数据集，用来评测模型的。</p>
-<p>2、<a href="https://catalog.ldc.upenn.edu/LDC2003T05" target="_blank" rel="noopener">Gigaword</a></p>
-<p>该语料非常大，大概有950w篇新闻文章，数据集用headline来做summary，即输出文本，用first sentence来做input，即输入文本，属于单句摘要的数据集。</p>
-<p>3、CNN/Daily Mail  </p>
-<p><a href="https://cs.nyu.edu/~kcho/DMQA/" target="_blank" rel="noopener">翻墙下载</a><br>该语料就是我们在机器阅读理解中用到的语料，该数据集属于多句摘要。</p>
-<p>4、Large Scale Chinese Short Text Summarization Dataset（<a href="http://icrc.hitsz.edu.cn/Article/show/139.html" target="_blank" rel="noopener">LCSTS</a>）</p>
-<p>这是一个中文短文本摘要数据集，数据采集自新浪微博，给研究中文摘要的童鞋们带来了福利。</p>
-<p>5、搜狗新闻数据 <a href="http://www.sogou.com/labs/resource/cs.php" target="_blank" rel="noopener">SogouCS</a>  </p>
-<p>来自搜狐新闻2012年6月—7月期间国内，国际，体育，社会，娱乐等18个频道的新闻数据，提供URL和正文信息</p>
-<p>6、头条数据 <a href="http://tcci.ccf.org.cn/conference/2018/taskdata.php" target="_blank" rel="noopener">nlpcc</a></p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>似乎当前的生成式摘要 只能处理特定情况，在输入文本长度远大于输出的时候，没法做？？   </p>
-<blockquote>
-<p>//todo</p>
-</blockquote>
-<hr>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>目前主要的几个词向量工具是 Glove、word2vec、fasttext、WordRank、ELMo. State of the art是ELMo.  </p>
 <ul>
-<li>参考：有点乱<br><a href="http://rsarxiv.github.io/2016/03/30/%E8%87%AA%E5%8A%A8%E6%96%87%E6%91%98%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" rel="noopener">http://rsarxiv.github.io/2016/03/30/%E8%87%AA%E5%8A%A8%E6%96%87%E6%91%98%EF%BC%88%E4%BA%8C%EF%BC%89/</a><br><a href="https://gist.github.com/rsarxiv/11470a8d763b2845f671061c21230435" target="_blank" rel="noopener">TextRank源码笔记</a><br><a href="https://gist.github.com/rsarxiv/4e949264b3bda98828b84cf2991e57e4" target="_blank" rel="noopener">TextTeasor源码笔记</a><br><a href="http://rsarxiv.github.io/2016/06/25/%E6%95%99%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/" target="_blank" rel="noopener">概述，包括各种模型</a></li>
+<li>参考<br><a href="https://blog.csdn.net/u012052268/article/details/77170517#41%E5%9F%BA%E4%BA%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%86%E5%B8%83%E8%A1%A8%E7%A4%BA" target="_blank" rel="noopener">博客：词嵌入的来龙去脉</a><br><a href="https://arxiv.org/ftp/arxiv/papers/1611/1611.05962.pdf" target="_blank" rel="noopener">来斯惟的博士论文：基于神经网络的词和文档语义向量表示方法研究</a><br><a href="https://blog.csdn.net/sinat_26917383/article/details/54847240" target="_blank" rel="noopener">博客：NLP︱高级词向量表达（一）——GloVe（理论、相关测评结果、R&amp;python实现、相关应用）</a><br><a href="https://blog.csdn.net/sinat_26917383/article/details/54850933" target="_blank" rel="noopener">博客：NLP︱高级词向量表达（二）——FastText（简述、学习笔记）</a><br><a href="https://blog.csdn.net/sinat_26917383/article/details/54852214" target="_blank" rel="noopener">博客：NLP︱高级词向量表达（三）——WordRank（简述）</a><br><a href="https://yq.aliyun.com/articles/594335?utm_content=m_50221" target="_blank" rel="noopener">博客：通用词向量、句向量研究现状</a>  </li>
 </ul>
-<hr>
-<ul>
-<li>参考文献（生成式的）<br>1.<a href="https://arxiv.org/abs/1705.04304" target="_blank" rel="noopener">A Deep Reinforced Model for Abstractive Summarization</a>：加入内注意力机制和新的训练方法。深度学习与强化学习的结合<br>2.Facebook的<a href="https://arxiv.org/abs/1705.03122" target="_blank" rel="noopener">Convolutional Sequence to Sequence Learning</a>：encoder 和 decoder用的都是CNN<br>3.<a href="https://www.aclweb.org/anthology/D/D15/D15-1044.pdf" target="_blank" rel="noopener">A Neural Attention Model for Sentence Summarization</a><br>4.ACL2017,<a href="https://arxiv.org/abs/1704.04368" target="_blank" rel="noopener">Get To The Point: Summarization with Pointer-Generator Networks</a></li>
-</ul>
-<hr>
-<ul>
-<li>参考博客<br>1.<a href="https://www.cnblogs.com/Determined22/p/6650373.html" target="_blank" rel="noopener">DL4NLP —— seq2seq+attention机制的应用：文档自动摘要（Automatic Text Summarization）</a>  </li>
-</ul>
-<hr>
-<ul>
-<li>github开源项目<br>1.Sequence-to-Sequence with Attention Model for Text Summarization<a href="https://github.com/tensorflow/models/tree/master/research/textsum" target="_blank" rel="noopener">点击查看</a><br>论文：Rush et al. A Neural Attention Modelfor Sentence Summarization.<br>2.Preparing a dataset for TensorFlow text summarization (TextSum) model：（数据处理的参考）<a href="https://github.com/surmenok/TextSum" target="_blank" rel="noopener">点击查看</a><br>3.其他人整理的项目<a href="http://blog.sciencenet.cn/home.php?mod=space&amp;uid=3360373&amp;do=blog&amp;id=1096265" target="_blank" rel="noopener">点击这里</a>包含seq2seq,文本摘要抽取式生成式，数据可视化。</li>
-</ul>
-<h4 id="UNK问题方法-参考这里"><a href="#UNK问题方法-参考这里" class="headerlink" title="UNK问题方法 参考这里"></a>UNK问题方法 <a href="http://rsarxiv.github.io/2016/05/12/%E8%87%AA%E5%8A%A8%E6%96%87%E6%91%98%EF%BC%88%E5%8D%81%EF%BC%89/" target="_blank" rel="noopener">参考这里</a></h4><ol>
-<li>char based  // todo   </li>
-<li>Vocabulary expansion词汇扩展  // todo   </li>
-<li>output layer boost // todo   </li>
-<li>pointing/copy //todo   </li>
-</ol>
 
       
     </div>
@@ -463,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/04/文本相似度计算_BM25/" rel="next" title="文本相似度 之BM25">
-                <i class="fa fa-chevron-left"></i> 文本相似度 之BM25
+              <a href="/2018/07/05/机器作曲调研/" rel="next" title="机器作曲调研">
+                <i class="fa fa-chevron-left"></i> 机器作曲调研
               </a>
             
           </div>
@@ -472,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/06/机器学习算法_SVM/" rel="prev" title="机器学习——SVM">
-                机器学习——SVM <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -618,7 +648,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文本摘要调研"><span class="nav-number">1.</span> <span class="nav-text">文本摘要调研</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-方法"><span class="nav-number">1.1.</span> <span class="nav-text">1. 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-生成式"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 生成式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本模型结构"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">基本模型结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#encoder"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">encoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#decoder"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">decoder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generate-summaries"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">generate summaries</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-抽取式"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 抽取式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#排序：两种常见方法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">排序：两种常见方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）图排序"><span class="nav-number">1.1.2.1.1.</span> <span class="nav-text">（1）图排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）基于特征"><span class="nav-number">1.1.2.1.2.</span> <span class="nav-text">（2）基于特征</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后处理"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">后处理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-评价指标ROUGE"><span class="nav-number">1.2.</span> <span class="nav-text">2 评价指标ROUGE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-1、ROUGE-2、ROUGE-N"><span class="nav-number">1.2.1.</span> <span class="nav-text">ROUGE-1、ROUGE-2、ROUGE-N</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-L"><span class="nav-number">1.2.2.</span> <span class="nav-text">ROUGE-L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-W-加权的ROUGE-L"><span class="nav-number">1.2.3.</span> <span class="nav-text">ROUGE-W 加权的ROUGE-L</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUGE-S"><span class="nav-number">1.2.4.</span> <span class="nav-text">ROUGE-S</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多参考摘要的情况"><span class="nav-number">1.2.5.</span> <span class="nav-text">多参考摘要的情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.3.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UNK问题方法-参考这里"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">UNK问题方法 参考这里</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-语言表示-Representation"><span class="nav-number">1.</span> <span class="nav-text">1 语言表示(Representation)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-词的表示方法之One-Hot"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 词的表示方法之One Hot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-词的分布式表示-Distributed-Reprensentation"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 词的分布式表示(Distributed Reprensentation)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-分布式表示"><span class="nav-number">2.</span> <span class="nav-text">2 分布式表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-基于矩阵的分布式表示"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 基于矩阵的分布式表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-基于聚类的分布式表示"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 基于聚类的分布式表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-基于神经网络的分布式表示"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 基于神经网络的分布式表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-神经网络语言模型概念"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 神经网络语言模型概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-实现"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-分布表示模型小结"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 分布表示模型小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-小结"><span class="nav-number">3.</span> <span class="nav-text">3 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">4.</span> <span class="nav-text">最后</span></a></li></ol></div>
             
 
           </div>
